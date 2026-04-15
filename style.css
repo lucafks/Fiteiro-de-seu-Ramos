@@ -1,0 +1,280 @@
+/* --- CONFIGURAÇÃO TÉCNICA --- */
+:root {
+    --primary: #e67e22;
+    --dark-bg: #0d0d0d;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-main: "Roboto", sans-serif;
+    --swiper-navigation-size: 44px;
+    --swiper-theme-color: #007aff;
+    font-size: 52.5%; /* 1rem = 8.4px */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    max-width: 100%;
+}
+
+html, body {
+    touch-action: manipulation;
+    overscroll-behavior: none;
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+/* --- LAYOUT --- */
+
+header {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.7), var(--dark-bg)), 
+                url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1000&q=80') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header img {
+    height: 38rem;
+}
+
+header h1 {
+    font-size: 5rem;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(13, 13, 13, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1.5rem;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 400;
+    transition: all 0.5 ease;
+}
+nav a:hover {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.content {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+.cardapio-wrapper {
+    width: 100%;
+    overflow: hidden;
+    cursor: grab; /* Indica que é arrastável no PC */
+}
+
+.cardapio-wrapper:active {
+    cursor: grabbing;
+}
+
+.grid-cardapio {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 2rem;
+    
+    /* Mantemos o Snap para o Touch, mas o JS vai ajudar no Mouse */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    
+    /* Esconde a barra de scroll */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.grid-cardapio::-webkit-scrollbar {
+    display: none;
+}
+
+.item-card {
+    flex: 0 0 30rem;
+    scroll-snap-align: center;
+    user-select: none;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem; /* Aumentado levemente para ficar mais orgânico */
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden; /* Garante que a imagem não saia das bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container da Imagem */
+.card-img {
+    width: 100%;
+    height: 18rem; /* Altura fixa para manter o padrão */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--glass-border);
+    transition: transform 0.5s ease;
+}
+
+.item-card:hover .card-img {
+    transform: scale(1.1); /* Efeito de zoom na imagem ao passar o mouse */
+}
+
+/* Informações abaixo da imagem */
+.card-info {
+    padding: 2.5rem; /* O padding que antes estava no card agora fica aqui */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.item-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.item-card h3 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.item-card p {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    min-height: 4.5rem; /* Mantém o alinhamento mesmo com textos diferentes */
+}
+
+.preco {
+    display: block;
+    margin-top: 1.5rem;
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 1.5rem 3.5rem;
+    border-radius: 5rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.glass-section {
+    margin-top: 6rem;
+    padding: 4rem;
+    background: var(--glass);
+    border-radius: 2rem;
+    backdrop-filter: blur(5px);
+}
+.btn-insta {
+    /* Gradiente Base do Instagram com 400% de largura para animação */
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
+    background-size: 400% 400%;
+    color: white;
+    text-decoration: none;
+    padding: 2rem 5rem;
+    border-radius: 5rem; /* Botão pílula */
+    font-size: 2.2rem;
+    font-weight: bold;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    
+    /* Transições suaves para todas as propriedades */
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    
+    /* Sombra neon inicial sutil */
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+    
+    /* Animação infinita do gradiente em idle */
+    animation: gradientMove 8s ease infinite;
+    position: relative;
+}
+
+/* Animação do Hover */
+.btn-insta:hover {
+    transform: translateY(-5px) scale(1.03); /* Eleva e aumenta levemente */
+    
+    /* Sombra neon agressiva e viva */
+    box-shadow: 0 10px 30px rgba(220, 39, 67, 0.7), 
+                0 0 100px rgba(188, 24, 136, 0.4);
+    
+    /* Acelera a movimentação das cores no hover */
+    animation: gradientMove 2s ease infinite; 
+}
+
+/* Feedback visual ao clicar */
+.btn-insta:active {
+    transform: translateY(-2px) scale(1);
+    box-shadow: 0 5px 15px rgba(220, 39, 67, 0.5);
+    transition: all 0.1s;
+}
+
+/* Keyframes para a movimentação das cores do gradiente */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+footer {
+    text-align: center;
+    padding: 4rem;
+    opacity: 0.4;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    header img {
+    height: 23rem;
+}
+    header h1 { font-size: 3.5rem; }
+    nav { gap: 1.5rem; justify-content: space-around;}
+
+    .grid-cardapio {
+        width: auto;
+        scroll-snap-type: y mandatory;
+    }
+}
