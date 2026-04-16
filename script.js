@@ -1,42 +1,184 @@
+/* --- 1. CONFIGURAÇÃO E DADOS --- */
+const bancoDadosProgramacao = {
+    semana_1: {
+        seg: [{ titulo: "Almoço Comercial", desc: "Prato feito caprichado.", hora: "11:00 - 14:00" }],
+        ter: [{ titulo: "Terça do Espetinho", desc: "Espetinho em dobro.", hora: "18:00" }],
+        qua: [{ titulo: "Quarta de Futebol", desc: "Jogos ao vivo.", hora: "21:00" }],
+        qui: [], sex: [], sab: [], dom: []
+    },
+    semana_2: {
+        seg: [{ titulo: "Segunda Especial", desc: "Evento da semana 2.", hora: "19:00" }],
+        qua: [{ titulo: "Libertadores", desc: "Telão ligado.", hora: "21:30" }],
+        ter: [], qui: [], sex: [], sab: [], dom: []
+    },
+    semana_3: { seg: [], ter: [], qua: [], qui: [], sex: [], sab: [], dom: [] },
+    semana_4: { seg: [], ter: [], qua: [], qui: [], sex: [], sab: [], dom: [] }
+};
+
+let semanaAtiva = "semana_1";
+
+/* --- 2. SUPORTE PARA MOUSE (DRAG NO CARDÁPIO) --- */
 const slider = document.querySelector('.grid-cardapio');
 let isDown = false;
-let startX;
-let scrollLeft;
+let startX, scrollLeft;
 
-// --- SUPORTE PARA MOUSE (DRAG) ---
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-    // Desativa o snap momentaneamente para o arrasto ser liso
-    slider.style.scrollSnapType = 'none';
-});
+if (slider) {
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+        slider.style.scrollSnapType = 'none';
+    });
 
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-    slider.style.scrollSnapType = 'x mandatory';
-});
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.style.scrollSnapType = 'x mandatory';
+    });
 
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.style.scrollSnapType = 'x mandatory';
-});
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.style.scrollSnapType = 'x mandatory';
+    });
 
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; // Velocidade do arrasto
-    slider.scrollLeft = scrollLeft - walk;
-});
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; 
+        slider.scrollLeft = scrollLeft - walk;
+    });
+}
 
-// --- LÓGICA DE LOOP INFINITO (OPCIONAL/SUAVE) ---
-// Se você quiser que ele volte ao início ao chegar no fim sem "crashar"
-slider.addEventListener('scroll', () => {
-    const maxScroll = slider.scrollWidth - slider.clientWidth;
-    if (slider.scrollLeft >= maxScroll - 1) {
-        // Se chegar no fim, ele volta pro começo suavemente ou instantâneo
-        // Para um loop perfeito, precisaríamos duplicar os itens como fizemos antes
+/* --- 3. LÓGICA DE RENDERIZAÇÃO DA AGENDA --- */
+
+function obterSemanaDoMes() {
+    const diaVal = new Date().getDate();
+    const numSemana = Math.ceil(diaVal / 7);
+    return `semana_${numSemana > 4 ? 4 : numSemana}`;
+}
+
+function atualizarDisplayProgramacao(diaId) {
+    const container = document.querySelector('.semana-content-wrapper');
+    if (!container) return;
+
+    const eventosDoDia = bancoDadosProgramacao[semanaAtiva][diaId] || [];
+    container.innerHTML = '';
+    document.querySelectorAll('.dia-btn').forEach(b => b.classList.remove('active'));
+
+    const btnAtivo = document.querySelector(`.dia-btn[data-dia="${diaId}"]`);
+    if (btnAtivo) btnAtivo.classList.add('active');
+
+    if (eventosDoDia.length === 0) {
+        container.innerHTML = `<div class="dia-content active"><p style="opacity:0.5;text-align:center;padding:2rem;">Nenhuma programação para este dia.</p></div>`;
+        return;
+    }
+
+    let htmlAtividades = `<div class="dia-content active">`;
+    eventosDoDia.forEach(ev => {
+        htmlAtividades += `
+            <div class="atividade-item">
+                <h3>${ev.titulo}</h3>
+                <p>${ev.desc}</p>
+                <span class="horario">${ev.hora}</span>
+            </div>`;
+    });
+    htmlAtividades += `</div>`;
+    container.innerHTML = htmlAtividades;
+}
+
+/* --- 4. FUNÇÃO DO CALENDÁRIO MENSAL --- */
+
+function gerarCalendario() {
+    const calendarBody = document.getElementById('calendar-body');
+    const listaEventos = document.querySelector('.eventos-lista-mini');
+    if (!calendarBody || !listaEventos) return;
+
+    const agora = new Date();
+    const ano = agora.getFullYear();
+    const mes = agora.getMonth();
+
+    const eventos = [
+        { dia: 18, titulo: "Rodada Brasileirão", info: "Telão ligado." },
+        { dia: 20, titulo: "Sextou no Ramos", info: "Clone de caldinho." },
+        { dia: 26, titulo: "Pagode do Ramos", info: "Pagode de mesa." }
+    ];
+
+    calendarBody.innerHTML = '';
+    listaEventos.innerHTML = '';
+
+    const diasSemana = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+    diasSemana.forEach(d => {
+        const h = document.createElement('div');
+        h.className = 'calendar-header';
+        h.innerText = d;
+        calendarBody.appendChild(h);
+    });
+
+    const primeiroDiaMes = new Date(ano, mes, 1).getDay();
+    const totalDiasMes = new Date(ano, mes + 1, 0).getDate();
+
+    for (let i = 0; i < primeiroDiaMes; i++) {
+        const div = document.createElement('div');
+        div.className = 'day empty';
+        calendarBody.appendChild(div);
+    }
+
+    const diasComEvento = eventos.map(e => e.dia);
+    for (let dia = 1; dia <= totalDiasMes; dia++) {
+        const div = document.createElement('div');
+        div.className = 'day';
+        div.innerText = dia;
+        if (dia === agora.getDate()) div.classList.add('today');
+        if (diasComEvento.includes(dia)) div.classList.add('event-dot');
+        calendarBody.appendChild(div);
+    }
+
+    eventos.forEach(ev => {
+        const card = document.createElement('div');
+        card.className = 'mini-card-evento';
+        card.innerHTML = `
+            <span class="mini-data">${ev.dia}/${String(mes + 1).padStart(2, '0')}</span>
+            <div class="mini-info"><strong>${ev.titulo}</strong><span>${ev.info}</span></div>`;
+        listaEventos.appendChild(card);
+    });
+}
+
+/* --- 5. INICIALIZAÇÃO E EVENTOS --- */
+
+function trocarSemana(idSemana) {
+    semanaAtiva = idSemana;
+    const diaAberto = document.querySelector('.dia-btn.active')?.getAttribute('data-dia') || 'seg';
+    atualizarDisplayProgramacao(diaAberto);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Inicializa Semana e Dia atual
+    semanaAtiva = obterSemanaDoMes();
+    const diasArray = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
+    const idHoje = diasArray[new Date().getDay()];
+    
+    atualizarDisplayProgramacao(idHoje);
+    if (typeof gerarCalendario === "function") gerarCalendario();
+
+    // Eventos do Hub (Semanal vs Mensal)
+    document.querySelectorAll('.hub-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-target');
+            document.querySelectorAll('.hub-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.hub-pane').forEach(pane => pane.classList.remove('active'));
+            document.getElementById(`pane-${target}`).classList.add('active');
+            if (target === 'mensal') gerarCalendario();
+        });
+    });
+
+    // Cliques nos dias da semana
+    const diasNav = document.querySelector('.dias-nav');
+    if (diasNav) {
+        diasNav.addEventListener('click', (e) => {
+            const btn = e.target.closest('.dia-btn');
+            if (btn) atualizarDisplayProgramacao(btn.getAttribute('data-dia'));
+        });
     }
 });

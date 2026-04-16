@@ -7,7 +7,8 @@
     --font-main: "Roboto", sans-serif;
     --swiper-navigation-size: 44px;
     --swiper-theme-color: #007aff;
-    font-size: 52.5%; /* 1rem = 8.4px */
+    font-size: 52.5%;
+    /* 1rem = 8.4px */
 }
 
 * {
@@ -18,7 +19,8 @@
     max-width: 100%;
 }
 
-html, body {
+html,
+body {
     touch-action: manipulation;
     overscroll-behavior: none;
     background-color: var(--dark-bg);
@@ -36,8 +38,8 @@ body {
 
 header {
     height: 50vh;
-    background: linear-gradient(rgba(0,0,0,0.7), var(--dark-bg)), 
-                url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1000&q=80') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), var(--dark-bg)),
+        url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1000&q=80') center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,11 +77,17 @@ nav a {
     font-weight: 400;
     transition: all 0.5 ease;
 }
+
 nav a:hover {
     color: var(--primary);
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 400;
+}
+
+.hero-content p {
+    position: relative;
+
 }
 
 .content {
@@ -97,7 +105,8 @@ nav a:hover {
 .cardapio-wrapper {
     width: 100%;
     overflow: hidden;
-    cursor: grab; /* Indica que é arrastável no PC */
+    cursor: grab;
+    /* Indica que é arrastável no PC */
 }
 
 .cardapio-wrapper:active {
@@ -109,13 +118,13 @@ nav a:hover {
     gap: 2rem;
     overflow-x: auto;
     padding: 2rem;
-    
+
     /* Mantemos o Snap para o Touch, mas o JS vai ajudar no Mouse */
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    
+
     /* Esconde a barra de scroll */
-    scrollbar-width: none; 
+    scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
@@ -129,9 +138,11 @@ nav a:hover {
     user-select: none;
     background: var(--glass);
     border: 1px solid var(--glass-border);
-    border-radius: 1.5rem; /* Aumentado levemente para ficar mais orgânico */
+    border-radius: 1.5rem;
+    /* Aumentado levemente para ficar mais orgânico */
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    overflow: hidden; /* Garante que a imagem não saia das bordas arredondadas */
+    overflow: hidden;
+    /* Garante que a imagem não saia das bordas arredondadas */
     display: flex;
     flex-direction: column;
 }
@@ -139,7 +150,8 @@ nav a:hover {
 /* Container da Imagem */
 .card-img {
     width: 100%;
-    height: 18rem; /* Altura fixa para manter o padrão */
+    height: 18rem;
+    /* Altura fixa para manter o padrão */
     background-size: cover;
     background-position: center;
     border-bottom: 1px solid var(--glass-border);
@@ -147,12 +159,14 @@ nav a:hover {
 }
 
 .item-card:hover .card-img {
-    transform: scale(1.1); /* Efeito de zoom na imagem ao passar o mouse */
+    transform: scale(1.1);
+    /* Efeito de zoom na imagem ao passar o mouse */
 }
 
 /* Informações abaixo da imagem */
 .card-info {
-    padding: 2.5rem; /* O padding que antes estava no card agora fica aqui */
+    padding: 2.5rem;
+    /* O padding que antes estava no card agora fica aqui */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -174,7 +188,8 @@ nav a:hover {
 .item-card p {
     font-size: 1.5rem;
     opacity: 0.8;
-    min-height: 4.5rem; /* Mantém o alinhamento mesmo com textos diferentes */
+    min-height: 4.5rem;
+    /* Mantém o alinhamento mesmo com textos diferentes */
 }
 
 .preco {
@@ -208,6 +223,7 @@ nav a:hover {
     border-radius: 2rem;
     backdrop-filter: blur(5px);
 }
+
 .btn-insta {
     /* Gradiente Base do Instagram com 400% de largura para animação */
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
@@ -215,19 +231,20 @@ nav a:hover {
     color: white;
     text-decoration: none;
     padding: 2rem 5rem;
-    border-radius: 5rem; /* Botão pílula */
+    border-radius: 5rem;
+    /* Botão pílula */
     font-size: 2.2rem;
     font-weight: bold;
     display: inline-block;
     border: none;
     cursor: pointer;
-    
+
     /* Transições suaves para todas as propriedades */
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    
+
     /* Sombra neon inicial sutil */
     box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
-    
+
     /* Animação infinita do gradiente em idle */
     animation: gradientMove 8s ease infinite;
     position: relative;
@@ -235,14 +252,15 @@ nav a:hover {
 
 /* Animação do Hover */
 .btn-insta:hover {
-    transform: translateY(-5px) scale(1.03); /* Eleva e aumenta levemente */
-    
+    transform: translateY(-5px) scale(1.03);
+    /* Eleva e aumenta levemente */
+
     /* Sombra neon agressiva e viva */
-    box-shadow: 0 10px 30px rgba(220, 39, 67, 0.7), 
-                0 0 100px rgba(188, 24, 136, 0.4);
-    
+    box-shadow: 0 10px 30px rgba(220, 39, 67, 0.7),
+        0 0 100px rgba(188, 24, 136, 0.4);
+
     /* Acelera a movimentação das cores no hover */
-    animation: gradientMove 2s ease infinite; 
+    animation: gradientMove 2s ease infinite;
 }
 
 /* Feedback visual ao clicar */
@@ -254,9 +272,17 @@ nav a:hover {
 
 /* Keyframes para a movimentação das cores do gradiente */
 @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 footer {
@@ -266,15 +292,283 @@ footer {
     font-size: 1.4rem;
 }
 
+/* --- HUB DE EVENTOS & PROGRAMAÇÃO --- */
+#agenda-hub {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 2rem;
+    padding: 3rem;
+    margin-top: 4rem;
+    backdrop-filter: blur(10px);
+}
+
+.hub-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.hub-switch {
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.6rem;
+    border-radius: 1.2rem;
+    border: 1px solid var(--glass-border);
+}
+
+.hub-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 1.2rem 3rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.6rem;
+    transition: 0.3s ease;
+}
+
+.hub-btn.active {
+    background: var(--primary);
+    color: var(--dark-bg);
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+}
+
+/* --- PAINEL SEMANAL (ABAS) --- */
+.dias-nav {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    scrollbar-width: none;
+}
+
+.dias-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.dia-btn {
+    flex: 1;
+    min-width: 8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.dia-btn.active {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(230, 126, 34, 0.1);
+}
+
+.dia-content {
+    display: none;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1.5rem;
+}
+
+.dia-content.active {
+    display: block;
+    animation: slideUp 0.4s ease;
+}
+
+.dia-content h3 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-top: 3.5rem;
+}
+
+.dia-content p {
+    font-size: 1.7rem;
+    opacity: 0.8;
+    margin-bottom: 0.6rem;
+}
+
+.horario {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: var(--primary);
+    color: var(--dark-bg);
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom:0.6rem;
+}
+
+/* --- PAINEL MENSAL --- */
+.hub-pane {
+    display: none;
+}
+
+.hub-pane.active {
+    display: block;
+}
+
+.mensal-grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    /* Calendário maior que a lista */
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Mini Calendário */
+.calendar-mini h4 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.8rem;
+    text-align: center;
+}
+
+.calendar-header {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+.day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    border: 1px solid transparent;
+}
+
+
+.day.event-dot {
+    border-color: var(--primary);
+    background: rgba(230, 126, 34, 0.2);
+    font-weight: bold;
+}
+.day.today {
+    border-color: var(--primary);
+    background: rgba(230, 125, 34, 0.973);
+    font-weight: bold;
+}
+.day.event-dot::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    width: 4px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+/* Lista Lateral Mini */
+.mini-card-evento {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--glass-border);
+}
+
+.mini-data {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.5rem;
+    min-width: 5rem;
+}
+
+.mini-info strong {
+    display: block;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.mini-info span {
+    font-size: 1.3rem;
+    opacity: 0.6;
+}
+
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 768px) {
     header img {
-    height: 23rem;
-}
-    header h1 { font-size: 3.5rem; }
-    nav { gap: 1.5rem; justify-content: space-around;}
+        height: 23rem;
+    }
+
+    .hero-content p {
+        width: 330px;
+        ;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    nav {
+        gap: 1.5rem;
+        justify-content: space-around;
+    }
 
     .grid-cardapio {
         width: auto;
         scroll-snap-type: y mandatory;
+    }
+
+    #agenda-hub {
+        padding: 2rem 1.5rem;
+    }
+
+    .hub-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .grid-cardapio {
+        scroll-snap-type: x mandatory;
+        /* Corrigido de y para x */
+    }
+
+    .mensal-grid-layout {
+        grid-template-columns: 1fr;
+        /* Empilha no mobile */
+        gap: 4rem;
+    }
+
+    .day {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-height: 700px) {
+    .hero-content p {
+        display: none;
     }
 }

@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="icon" href="ramoss.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Fiteiro de Seu Ramos | O Point do Engenho do Meio</title>
@@ -98,24 +99,60 @@
                 </div>
             </div>
 
-            <div class="cta-container">
-                <a href="https://www.instagram.com/fiteirodeseuramos/" target="_blank" class="btn-insta">Siga no
-                    Instagram</a>
+        </section>
+        
+        <section id="agenda-hub" class="content">
+            <div class="hub-header">
+                <h2 class="section-title">O que rola no Fiteiro</h2>
+                
+                <div class="hub-switch">
+                    <button class="hub-btn active" data-target="semanal">Programação</button>
+                    <button class="hub-btn" data-target="mensal">Eventos do Mês</button>
+                </div>
+            </div>
+            
+            <div id="pane-semanal" class="hub-pane active">
+                <div class="dias-nav">
+                    <button class="dia-btn active" data-dia="seg">Seg</button>
+                    <button class="dia-btn" data-dia="ter">Ter</button>
+                    <button class="dia-btn" data-dia="qua">Qua</button>
+                    <button class="dia-btn" data-dia="qui">Qui</button>
+                    <button class="dia-btn" data-dia="sex">Sex</button>
+                    <button class="dia-btn" data-dia="sab">Sáb</button>
+                    <button class="dia-btn" data-dia="dom">Dom</button>
+                </div>
+                
+                <div class="semana-content-wrapper"></div>
+            </div>
+            
+            <div id="pane-mensal" class="hub-pane">
+                <div class="mensal-grid-layout">
+                    <div class="calendar-mini">
+                        <h4 id="mes-atual">Abril 2026</h4>
+                        <div class="calendar-grid" id="calendar-body"></div>
+                    </div>
+                    
+                    <div class="eventos-lista-mini"></div>
+                </div>
             </div>
         </section>
-
+        
+        <div class="cta-container">
+            <a href="https://www.instagram.com/fiteirodeseuramos/" target="_blank" class="btn-insta">Siga no
+                Instagram</a>
+        </div>
+        
         <section id="sobre" class="glass-section">
             <h2>Tradição e Amizade</h2>
             <p>O <strong>Fiteiro de Seu Ramos</strong> é o coração do Engenho do Meio. Aqui não tem frescura: é cadeira
                 na calçada, jogo no telão e aquele atendimento que só quem é de casa conhece.</p>
-        </section>
-    </main>
-
+            </section>
+        </main>
+        
     <footer>
         <p>&copy; 2026 Fiteiro de Seu Ramos - Engenho do Meio, Recife</p>
     </footer>
 
-    <script src="main.js"></script>
 </body>
 <script src="script.js"></script>
 
