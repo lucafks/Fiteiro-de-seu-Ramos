@@ -1,18 +1,118 @@
 /* --- 1. CONFIGURAÇÃO E DADOS --- */
 const bancoDadosProgramacao = {
     semana_1: {
-        seg: [{ titulo: "Almoço Comercial", desc: "Prato feito caprichado.", hora: "11:00 - 14:00" }],
-        ter: [{ titulo: "Terça do Espetinho", desc: "Espetinho em dobro.", hora: "18:00" }],
-        qua: [{ titulo: "Quarta de Futebol", desc: "Jogos ao vivo.", hora: "21:00" }],
-        qui: [], sex: [], sab: [], dom: []
+        seg: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "Fechado" }
+        ],
+        ter: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        qua: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        qui: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        sex: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        sab: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "08:00–20:00" }
+        ],
+        dom: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–20:00" }
+        ]
     },
     semana_2: {
-        seg: [{ titulo: "Segunda Especial", desc: "Evento da semana 2.", hora: "19:00" }],
-        qua: [{ titulo: "Libertadores", desc: "Telão ligado.", hora: "21:30" }],
-        ter: [], qui: [], sex: [], sab: [], dom: []
+        seg: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "Fechado" }
+        ],
+        ter: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        qua: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        qui: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        sex: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        sab: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "08:00–20:00" }
+        ],
+        dom: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–20:00" }
+        ]
     },
-    semana_3: { seg: [], ter: [], qua: [], qui: [], sex: [], sab: [], dom: [] },
-    semana_4: { seg: [], ter: [], qua: [], qui: [], sex: [], sab: [], dom: [] }
+    semana_3: {
+        seg: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "Fechado" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "Fechado" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "Fechado" }
+            
+        ],
+        ter: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+            
+        ],
+        qua: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+            
+        ],
+        qui: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+            
+        ],
+        sex: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+            
+        ],
+        sab: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "08:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "08:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "08:00–20:00" }
+            
+        ],
+        dom: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–20:00" },
+            { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–20:00" }
+            
+        ]
+    },
+    semana_4: {
+        seg: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "Fechado" }
+        ],
+        ter: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        qua: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        qui: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        sex: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
+        ],
+        sab: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "08:00–20:00" }
+        ],
+        dom: [
+            { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–20:00" }
+        ]
+    }
 };
 
 let semanaAtiva = "semana_1";
@@ -45,7 +145,7 @@ if (slider) {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2; 
+        const walk = (x - startX) * 2;
         slider.scrollLeft = scrollLeft - walk;
     });
 }
@@ -157,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     semanaAtiva = obterSemanaDoMes();
     const diasArray = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
     const idHoje = diasArray[new Date().getDay()];
-    
+
     atualizarDisplayProgramacao(idHoje);
     if (typeof gerarCalendario === "function") gerarCalendario();
 

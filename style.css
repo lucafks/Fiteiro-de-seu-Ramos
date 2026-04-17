@@ -270,6 +270,74 @@ nav a:hover {
     transition: all 0.1s;
 }
 
+/* --- BOTÃO DE CONTATO (WHATSAPP) --- */
+.btn-contato {
+    background: rgba(37, 211, 102, 0.1);
+    /* Fundo verde transparente */
+    color: #25d366;
+    padding: 1.5rem 3.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgba(37, 211, 102, 0.3);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.btn-contato:hover {
+    background: #25d366;
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* --- BOTÃO DE FEEDBACK (SISTEMA) --- */
+.btn-feedback {
+    background: rgba(230, 126, 34, 0.1);
+    /* Fundo laranja transparente (seu primary) */
+    color: var(--primary);
+    padding: 1.5rem 3.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgba(230, 126, 34, 0.3);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.btn-feedback:hover {
+    background: var(--primary);
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(230, 126, 34, 0.4);
+}
+
+/* --- AJUSTE PARA O CONTAINER --- */
+.cta-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+/* Ajuste para ícones dentro dos botões (opcional) */
+.btn-contato span,
+.btn-feedback span {
+    font-size: 2.2rem;
+}
+
 /* Keyframes para a movimentação das cores do gradiente */
 @keyframes gradientMove {
     0% {
@@ -401,7 +469,7 @@ footer {
     border-radius: 0.5rem;
     font-weight: bold;
     font-size: 1.4rem;
-    margin-bottom:0.6rem;
+    margin-bottom: 0.6rem;
 }
 
 /* --- PAINEL MENSAL --- */
@@ -460,11 +528,13 @@ footer {
     background: rgba(230, 126, 34, 0.2);
     font-weight: bold;
 }
+
 .day.today {
     border-color: var(--primary);
     background: rgba(230, 125, 34, 0.973);
     font-weight: bold;
 }
+
 .day.event-dot::after {
     content: '';
     position: absolute;
