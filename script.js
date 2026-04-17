@@ -51,43 +51,43 @@ const bancoDadosProgramacao = {
             { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "Fechado" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "Fechado" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "Fechado" }
-            
+
         ],
         ter: [
             { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
-            
+
         ],
         qua: [
             { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
-            
+
         ],
         qui: [
             { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
-            
+
         ],
         sex: [
             { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–13:00 | 14:00–20:00" }
-            
+
         ],
         sab: [
             { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "08:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "08:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "08:00–20:00" }
-            
+
         ],
         dom: [
             { titulo: "Horario de funcionamento", desc: "Hoje as ", hora: "06:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–20:00" },
             { titulo: "loremepsun", desc: "Hoje as ", hora: "06:00–20:00" }
-            
+
         ]
     },
     semana_4: {
@@ -253,6 +253,13 @@ function trocarSemana(idSemana) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Adicione esta linha logo no início:
+        window.history.scrollRestoration = 'manual';
+
+        // ... restante do seu código
+    });
     // Inicializa Semana e Dia atual
     semanaAtiva = obterSemanaDoMes();
     const diasArray = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
