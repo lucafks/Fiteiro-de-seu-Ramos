@@ -102,6 +102,8 @@ nav a:hover {
     margin-bottom: 4rem;
 }
 
+.section-title span {color: var(--primary);}
+
 .cardapio-wrapper {
     width: 100%;
     overflow: hidden;

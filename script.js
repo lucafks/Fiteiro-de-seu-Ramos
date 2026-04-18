@@ -253,22 +253,30 @@ function trocarSemana(idSemana) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Evita que o navegador pule para posições antigas ao carregar
+    window.history.scrollRestoration = 'manual';
 
-    document.addEventListener('DOMContentLoaded', () => {
-        // Adicione esta linha logo no início:
-        window.history.scrollRestoration = 'manual';
-
-        // ... restante do seu código
-    });
-    // Inicializa Semana e Dia atual
+    // 2. Inicializa Semana e Dia atual
     semanaAtiva = obterSemanaDoMes();
     const diasArray = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
     const idHoje = diasArray[new Date().getDay()];
 
+    // 3. Atualiza o display inicial
     atualizarDisplayProgramacao(idHoje);
     if (typeof gerarCalendario === "function") gerarCalendario();
 
-    // Eventos do Hub (Semanal vs Mensal)
+    // 4. LÓGICA DE SCROLL AUTOMÁTICO (Fim de Semana)
+    const diasNav = document.querySelector('.dias-nav');
+    if (diasNav && (idHoje === 'sex' || idHoje === 'sab' || idHoje === 'dom')) {
+        setTimeout(() => {
+            diasNav.scrollTo({
+                left: diasNav.scrollWidth,
+                behavior: 'smooth'
+            });
+        }, 300); // Pequeno delay para garantir que o layout renderizou
+    }
+
+    // 5. Eventos do Hub (Semanal vs Mensal)
     document.querySelectorAll('.hub-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const target = btn.getAttribute('data-target');
@@ -280,12 +288,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cliques nos dias da semana
-    const diasNav = document.querySelector('.dias-nav');
+    // 6. Cliques nos dias da semana
     if (diasNav) {
         diasNav.addEventListener('click', (e) => {
             const btn = e.target.closest('.dia-btn');
-            if (btn) atualizarDisplayProgramacao(btn.getAttribute('data-dia'));
+            if (btn) {
+                // Remove active de todos e coloca no clicado
+                document.querySelectorAll('.dia-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                atualizarDisplayProgramacao(btn.getAttribute('data-dia'));
+            }
         });
     }
 });
