@@ -201,6 +201,10 @@ nav a:hover {
     letter-spacing: -0.5px;
 }
 
+#petiscos {
+    scroll-margin-top: 15vh;
+}
+
 .cta-container {
     text-align: center;
     margin-top: 5rem;
@@ -353,6 +357,26 @@ nav a:hover {
     }
 }
 
+.map-container {
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.map-container iframe {
+    border-radius: 1.5rem;
+    filter: grayscale(100%) invert(90%) contrast(90%);
+    /* Efeito Dark Mode no Mapa */
+}
+
+#localizacao {
+    scroll-margin-top: 15vh;
+}
+
+
 footer {
     text-align: center;
     padding: 4rem;
@@ -362,6 +386,7 @@ footer {
 
 /* --- HUB DE EVENTOS & PROGRAMAÇÃO --- */
 #agenda-hub {
+    scroll-margin-top: 20vh;
     background: var(--glass);
     border: 1px solid var(--glass-border);
     border-radius: 2rem;
