@@ -302,3 +302,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- LÓGICA DE TEMA ---
+const themeBtn = document.getElementById('theme-toggle');
+const body = document.body;
+const icon = themeBtn.querySelector('.icon');
+
+// 1. Função para aplicar o tema
+function setTheme(isLight) {
+    if (isLight) {
+        body.classList.add('light-mode');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.classList.remove('light-mode');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+// 2. Checagem Inicial (Preferência do Sistema + Cache)
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+    setTheme(true);
+}
+
+// 3. Evento de Clique
+themeBtn.addEventListener('click', () => {
+    const isLight = body.classList.contains('light-mode');
+    setTheme(!isLight);
+});
+
+// 4. Ouvir mudança do sistema em tempo real
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) { // Só muda se o usuário não escolheu manualmente
+        setTheme(e.matches);
+    }
+});
