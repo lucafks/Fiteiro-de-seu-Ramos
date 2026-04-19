@@ -112,6 +112,13 @@ nav a:hover {
     border-radius: 1rem;
     font-size: 1.8rem;
     transition: 0.3s;
+
+    height: 41px;
+
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+
 }
 
 .theme-btn:hover {
