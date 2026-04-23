@@ -97,10 +97,10 @@ body.fundo-oled {
 
 .texto-entalhado {
     font-weight: 900;
-    font-size: 6vw;
+    font-size: 3vw;
+    letter-spacing: 2.5vw;
     color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 3vw;
     text-align: center;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1), -1px -1px 2px rgba(0, 0, 0, 0.8);
 }
@@ -292,5 +292,7 @@ body.fundo-oled {
 
     .texto-entalhado {
     font-weight: 725;
+    font-size: 6vw;
+    letter-spacing: 3vw;
     }
 }
