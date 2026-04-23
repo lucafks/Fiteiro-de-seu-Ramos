@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/cardapio.css">
 </head>
+
 <body class="fundo-oled">
 
     <nav class="nav-minimal">
@@ -18,85 +20,1397 @@
         <div class="furo-tabua"></div>
 
         <header class="header-entalhado">
-            <h1 class="texto-entalhado">FITEIRO DE SEU RAMOS</h1>
+            <img class="texto-entalhado" src="midia/cardramos.png" alt="FITEIRO DE SEU RAMOS">
             <div class="divisor-queimado"></div>
+            <h1 class="texto-entalhado">CARDÁPIO</h1>
             <p>// CARDÁPIO_WOOD_v3.4</p>
         </header>
 
         <section class="categoria">
-            <h2 class="titulo-categoria">CERVEJAS NO GRAU</h2>
-            
+            <h2 class="titulo-categoria">CALDINHOS</h2>
             <div class="itens-entalhados">
+
                 <div class="item-esculpido">
                     <div class="foto-produto">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEeluRoFoPq-irvGhKVSRDWMvE9Ju1_tXNDA&s" alt="Heineken 600ml">
+                        <img src="" alt="Feijão">
                     </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>HEINEKEN 600ML</h3>
-                            <p>A puro malte super gelada.</p>
+                            <h3>FEIJÃO</h3>
+                            <p>Caldinho tradicional bem temperado e servido quente.</p>
                         </div>
-                        <span class="preco-esculpido">14.00</span>
+                        <span class="preco-esculpido">8.00</span>
                     </div>
                 </div>
 
                 <div class="item-esculpido">
                     <div class="foto-produto">
-                        <img src="data:image/jpeg;base64,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" alt="Skol 600ml">
+                        <img src="" alt="Peixe">
                     </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>SKOL 600ML</h3>
-                            <p>A que desce redondo.</p>
+                            <h3>PEIXE</h3>
+                            <p>Caldinho saboroso preparado com peixe selecionado.</p>
                         </div>
-                        <span class="preco-esculpido">9.00</span>
+                        <span class="preco-esculpido">8.50</span>
                     </div>
                 </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Vaca Atolada">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>VACA ATOLADA</h3>
+                            <p>Caldinho encorpado com sabor marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">8.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Sarapatel">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SARAPATEL</h3>
+                            <p>Tradicional nordestino cheio de sabor.</p>
+                        </div>
+                        <span class="preco-esculpido">8.00</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section class="categoria">
-            <h2 class="titulo-categoria">PETISCOS RAIZ</h2>
-            
+            <h2 class="titulo-categoria">ESPETINHOS</h2>
             <div class="itens-entalhados">
+
                 <div class="item-esculpido">
                     <div class="foto-produto">
-                        <img src="data:image/jpeg;base64,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" alt="Arrumadinho">
+                        <img src="" alt="Frango">
                     </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>ARRUMADINHO</h3>
-                            <p>Charque, feijão verde, vinagrete e farofa.</p>
+                            <h3>FRANGO</h3>
+                            <p>Espetinho clássico grelhado na brasa.</p>
+                        </div>
+                        <span class="preco-esculpido">9.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Frango com Bacon">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>FRANGO C/ BACON</h3>
+                            <p>Frango envolvido com bacon crocante.</p>
+                        </div>
+                        <span class="preco-esculpido">10.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Bananinha">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BANANINHA</h3>
+                            <p>Corte macio e muito suculento.</p>
+                        </div>
+                        <span class="preco-esculpido">10.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Picanha">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>PICANHA</h3>
+                            <p>Espetinho premium feito na brasa.</p>
+                        </div>
+                        <span class="preco-esculpido">10.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">BOLINHOS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Bacalhau">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BACALHAU</h3>
+                            <p>Bolinho crocante por fora e recheado com bacalhau.</p>
+                        </div>
+                        <span class="preco-esculpido">20.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Charque">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CHARQUE</h3>
+                            <p>Bolinho artesanal recheado com charque temperada.</p>
+                        </div>
+                        <span class="preco-esculpido">20.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Costela">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>COSTELA</h3>
+                            <p>Bolinho recheado com costela desfiada e sabor marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">23.50</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">PETISCOS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Carne de Sol com Fritas"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CARNE DE SOL C/ FRITAS</h3>
+                            <p>Carne de sol acompanhada de batatas fritas crocantes.</p>
+                        </div>
+                        <span class="preco-esculpido">38.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Carne de Sol com Queijo"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CARNE DE SOL C/ QUEIJO</h3>
+                            <p>Carne de sol servida com queijo derretido.</p>
+                        </div>
+                        <span class="preco-esculpido">30.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Linguiça Matuta"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>LINGUIÇA MATUTA ACEBOLADA</h3>
+                            <p>Linguiça acebolada bem servida.</p>
                         </div>
                         <span class="preco-esculpido">25.00</span>
                     </div>
                 </div>
 
                 <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Peixe Frito"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>PEIXE FRITO (ALBACORA)</h3>
+                            <p>Peixe frito crocante e saboroso.</p>
+                        </div>
+                        <span class="preco-esculpido">35.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Batata Frita"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BATATA FRITA</h3>
+                            <p>Porção de batata frita crocante.</p>
+                        </div>
+                        <span class="preco-esculpido">15.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Batata com Bacon"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BATATA FRITA C/ BACON</h3>
+                            <p>Batata frita com bacon crocante.</p>
+                        </div>
+                        <span class="preco-esculpido">20.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Torresmo"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>TORRESMO</h3>
+                            <p>Torresmo crocante e sequinho.</p>
+                        </div>
+                        <span class="preco-esculpido">20.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Agulha Frita"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>AGULHA FRITA</h3>
+                            <p>Peixe frito crocante e bem temperado.</p>
+                        </div>
+                        <span class="preco-esculpido">15.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Calabresa com Fritas"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CALABRESA C/ FRITAS</h3>
+                            <p>Calabresa acebolada acompanhada de fritas.</p>
+                        </div>
+                        <span class="preco-esculpido">28.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Queijo do Engenho"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>QUEIJO DO ENGENHO</h3>
+                            <p>Queijo regional grelhado e saboroso.</p>
+                        </div>
+                        <span class="preco-esculpido">18.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Sarapatel de Porco"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SARAPATEL DE PORCO</h3>
+                            <p>Porção tradicional nordestina.</p>
+                        </div>
+                        <span class="preco-esculpido">15.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Tábua de Frios M"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>TÁBUA DE FRIOS M</h3>
+                            <p>Seleção de frios tamanho médio.</p>
+                        </div>
+                        <span class="preco-esculpido">30.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Tábua de Frios G"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>TÁBUA DE FRIOS G</h3>
+                            <p>Seleção completa de frios grande.</p>
+                        </div>
+                        <span class="preco-esculpido">40.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Asinha de Frango com Fritas"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>ASINHA DE FRANGO C/ FRITAS</h3>
+                            <p>Asinhas crocantes com batata frita.</p>
+                        </div>
+                        <span class="preco-esculpido">25.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Asinha Empanada"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>ASINHA EMPANADA</h3>
+                            <p>Porção de asinhas empanadas crocantes.</p>
+                        </div>
+                        <span class="preco-esculpido">15.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Camarão ao Alho e Óleo"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CAMARÃO AO ALHO E ÓLEO</h3>
+                            <p>Camarão refogado no alho e óleo.</p>
+                        </div>
+                        <span class="preco-esculpido">25.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Dadinho de Queijo"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>DADINHO DE QUEIJO</h3>
+                            <p>Cubos crocantes de queijo.</p>
+                        </div>
+                        <span class="preco-esculpido">20.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Carne de Sol Acebolada"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CARNE DE SOL ACEBOLADA</h3>
+                            <p>Carne de sol acebolada e suculenta.</p>
+                        </div>
+                        <span class="preco-esculpido">25.00</span>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">PASTÉIS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
                     <div class="foto-produto">
-                        <img src="data:image/jpeg;base64,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" alt="Bolinho de Bacalhau">
+                        <img src="" alt="Pastel de Queijo">
                     </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>BOLINHO DE BACALHAU</h3>
-                            <p>Porção com 6 unidades crocantes.</p>
+                            <h3>QUEIJO</h3>
+                            <p>Porção com 8 unidades de pastel recheado com queijo.</p>
                         </div>
-                        <span class="preco-esculpido">18.00</span>
+                        <span class="preco-esculpido">20.00</span>
                     </div>
                 </div>
 
                 <div class="item-esculpido">
                     <div class="foto-produto">
-                        <img src="data:image/jpeg;base64,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" alt="Caldinho de Feijão">
+                        <img src="" alt="Pastel de Carne">
                     </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>CALDINHO DE FEIJÃO</h3>
-                            <p>Acompanha ovo de codorna e torresmo.</p>
+                            <h3>CARNE</h3>
+                            <p>Porção com 8 unidades de pastel recheado com carne.</p>
+                        </div>
+                        <span class="preco-esculpido">20.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Pastel Nordestino">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>NORDESTINO</h3>
+                            <p>Porção com 8 unidades com recheio especial.</p>
+                        </div>
+                        <span class="preco-esculpido">21.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Pastel de Camarão">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CAMARÃO</h3>
+                            <p>Porção com 12 unidades recheadas com camarão.</p>
+                        </div>
+                        <span class="preco-esculpido">23.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">CERVEJAS 600ML</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Heineken 600ml">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>HEINEKEN</h3>
+                            <p>Cerveja puro malte super gelada.</p>
+                        </div>
+                        <span class="preco-esculpido">15.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Devassa 600ml">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>DEVASSA</h3>
+                            <p>Leve e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">9.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Amstel 600ml">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>AMSTEL</h3>
+                            <p>Cerveja leve e saborosa.</p>
+                        </div>
+                        <span class="preco-esculpido">10.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Eisenbahn 600ml">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>EISENBAHN</h3>
+                            <p>Cerveja encorpada e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">12.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">CERVEJAS LONGNECK</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Heineken Longneck">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>HEINEKEN</h3>
+                            <p>Longneck puro malte bem gelada.</p>
+                        </div>
+                        <span class="preco-esculpido">8.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Heineken Sem Álcool">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>HEINEKEN S/ ÁLCOOL</h3>
+                            <p>O mesmo sabor sem álcool.</p>
+                        </div>
+                        <span class="preco-esculpido">9.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Eisenbahn Pilsen">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>EISENBAHN PILSEN</h3>
+                            <p>Clássica e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">7.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Eisenbahn IPA">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>EISENBAHN IPA</h3>
+                            <p>Mais intensa e aromática.</p>
+                        </div>
+                        <span class="preco-esculpido">9.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Eisenbahn Ale">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>EISENBAHN ALE</h3>
+                            <p>Sabor equilibrado e marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">9.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Eisenbahn Session IPA">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>EISENBAHN SESSION IPA</h3>
+                            <p>Leve, cítrica e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">9.00</span>
+                    </div>
+                </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">CERVEJAS ESPECIAIS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Baden Baden American IPA">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BADEN BADEN AMERICAN IPA</h3>
+                            <p>Cerveja especial com sabor intenso e aromático.</p>
+                        </div>
+                        <span class="preco-esculpido">16.90</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Baden Baden Witbier">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BADEN BADEN WITBIER</h3>
+                            <p>Leve, cítrica e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">16.90</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Baden Baden Golden">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BADEN BADEN GOLDEN</h3>
+                            <p>Sabor suave e equilibrado.</p>
+                        </div>
+                        <span class="preco-esculpido">16.90</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Baden Baden Cristal">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BADEN BADEN CRISTAL</h3>
+                            <p>Refrescante e clássica.</p>
+                        </div>
+                        <span class="preco-esculpido">16.90</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Lagunitas IPA">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>LAGUNITAS IPA</h3>
+                            <p>IPA encorpada e marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">13.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Blue Moon">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BLUE MOON</h3>
+                            <p>Cerveja especial refrescante com notas cítricas suaves.</p>
+                        </div>
+                        <span class="preco-esculpido">16.00</span>
+                    </div>
+                </div>
+
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">CACHAÇAS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Matuta Umburana"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>MATUTA UMBURANA</h3>
+                            <p>Cachaça artesanal com sabor marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">7.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Pitú"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>PITÚ</h3>
+                            <p>Clássica cachaça pernambucana.</p>
+                        </div>
+                        <span class="preco-esculpido">4.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Pitú Gold"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>PITÚ GOLD</h3>
+                            <p>Versão premium envelhecida.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Bananazinha"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BANANAZINHA</h3>
+                            <p>Licor doce e tradicional.</p>
                         </div>
                         <span class="preco-esculpido">8.00</span>
                     </div>
                 </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Germana"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>GERMANA</h3>
+                            <p>Cachaça artesanal premium.</p>
+                        </div>
+                        <span class="preco-esculpido">10.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Salinas"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SALINAS</h3>
+                            <p>Cachaça tradicional e bem reconhecida.</p>
+                        </div>
+                        <span class="preco-esculpido">8.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Ypióca Ouro"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>YPIÓCA OURO</h3>
+                            <p>Envelhecida e com sabor marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">7.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Ypióca"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>YPIÓCA</h3>
+                            <p>Clássica e tradicional.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Alcatrão"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>ALCATRÃO</h3>
+                            <p>Bebida forte e tradicional.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="" alt="Seleta"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SELETA</h3>
+                            <p>Sabor suave e tradicional.</p>
+                        </div>
+                        <span class="preco-esculpido">8.00</span>
+                    </div>
+
+
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">REFRIGERANTES / OUTROS</h2>
+            <div class="itens-entalhados">
+
+               <div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Guaraná Lata"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>GUARANÁ (LATA)</h3>
+            <p>Refrigerante gelado.</p>
+        </div>
+        <span class="preco-esculpido">6.50</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Coca-Cola Lata"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>COCA-COLA (LATA)</h3>
+            <p>Refrigerante clássico bem gelado.</p>
+        </div>
+        <span class="preco-esculpido">6.50</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Coca-Cola Zero"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>COCA-COLA ZERO (LATA)</h3>
+            <p>Zero açúcar e bem gelada.</p>
+        </div>
+        <span class="preco-esculpido">6.50</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Fanta"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>FANTA (LATA)</h3>
+            <p>Refrigerante refrescante.</p>
+        </div>
+        <span class="preco-esculpido">6.50</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Refrigerante Fys"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>REFRIGERANTE FYS (LATA)</h3>
+            <p>Leve e refrescante.</p>
+        </div>
+        <span class="preco-esculpido">6.00</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Coca-Cola 1L"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>COCA-COLA 1L</h3>
+            <p>Ideal para compartilhar.</p>
+        </div>
+        <span class="preco-esculpido">8.50</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Coca-Cola KS"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>COCA-COLA KS</h3>
+            <p>Clássica garrafinha retornável.</p>
+        </div>
+        <span class="preco-esculpido">4.50</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Guaraná 1L"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>GUARANÁ 1L</h3>
+            <p>Refrigerante bem gelado.</p>
+        </div>
+        <span class="preco-esculpido">8.50</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="H2O Limoneto"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>H2O LIMONETO</h3>
+            <p>Bebida leve e refrescante.</p>
+        </div>
+        <span class="preco-esculpido">6.50</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="H2O Limão"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>H2O LIMÃO</h3>
+            <p>Refrescante e leve.</p>
+        </div>
+        <span class="preco-esculpido">6.50</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Água de Coco"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>ÁGUA DE COCO</h3>
+            <p>Natural e gelada.</p>
+        </div>
+        <span class="preco-esculpido">5.00</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Fys Tônica"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>FYS TÔNICA</h3>
+            <p>Ideal para drinks.</p>
+        </div>
+        <span class="preco-esculpido">6.00</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Skinka"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>SKINKA</h3>
+            <p>Refrigerante refrescante.</p>
+        </div>
+        <span class="preco-esculpido">6.00</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Red Bull"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>RED BULL</h3>
+            <p>Energético tradicional.</p>
+        </div>
+        <span class="preco-esculpido">13.00</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Monster"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>MONSTER</h3>
+            <p>Energético gelado.</p>
+        </div>
+        <span class="preco-esculpido">14.00</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Água sem Gás"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>ÁGUA S/ GÁS</h3>
+            <p>Água mineral gelada.</p>
+        </div>
+        <span class="preco-esculpido">3.00</span>
+    </div>
+</div>
+
+<div class="item-esculpido">
+    <div class="foto-produto"><img src="" alt="Água com Gás"></div>
+    <div class="item-info">
+        <div class="nome-desc">
+            <h3>ÁGUA C/ GÁS</h3>
+            <p>Água mineral com gás.</p>
+        </div>
+        <span class="preco-esculpido">4.00</span>
+    </div>
+</div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">DRINKS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Gordon's e Tônica">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>GORDON'S E TÔNICA</h3>
+                            <p>Gin Gordon's com água tônica gelada.</p>
+                        </div>
+                        <span class="preco-esculpido">16.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Smirnoff Caipiroska">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SMIRNOFF CAIPIROSKA</h3>
+                            <p>Vodka Smirnoff com frutas e gelo.</p>
+                        </div>
+                        <span class="preco-esculpido">13.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Caipirinha">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CAIPIRINHA</h3>
+                            <p>Clássica com limão, açúcar e cachaça.</p>
+                        </div>
+                        <span class="preco-esculpido">10.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Caipirinha Dourada">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CAIPIRINHA DOURADA</h3>
+                            <p>Versão especial com cachaça premium.</p>
+                        </div>
+                        <span class="preco-esculpido">13.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Johnnie Red Highball">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>JOHNNIE RED HIGHBALL</h3>
+                            <p>Whisky Johnnie Red com mixer gelado.</p>
+                        </div>
+                        <span class="preco-esculpido">15.90</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Blonde Citrus">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BLONDE CITRUS</h3>
+                            <p>Drink cítrico e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">16.90</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">VINHOS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Pérgola">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>PÉRGOLA</h3>
+                            <p>Vinho suave e tradicional.</p>
+                        </div>
+                        <span class="preco-esculpido">30.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Quinta do Morgado">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>QUINTA DO MORGADO</h3>
+                            <p>Vinho leve e acessível.</p>
+                        </div>
+                        <span class="preco-esculpido">20.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Reservado Malbec">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>RESERVADO MALBEC</h3>
+                            <p>Vinho encorpado com notas marcantes.</p>
+                        </div>
+                        <span class="preco-esculpido">45.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Reservado Cabernet">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>RESERVADO CABERNET</h3>
+                            <p>Vinho equilibrado e sofisticado.</p>
+                        </div>
+                        <span class="preco-esculpido">45.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Chilano Cabernet">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CHILANO CABERNET</h3>
+                            <p>Vinho chileno com sabor marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">45.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">DESTILADOS (DOSE)</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Johnnie Red">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>JOHNNIE RED</h3>
+                            <p>Dose de whisky clássico e marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">8.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Old Parr">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>OLD PARR</h3>
+                            <p>Whisky premium suave e encorpado.</p>
+                        </div>
+                        <span class="preco-esculpido">12.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Black & White">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BLACK & WHITE</h3>
+                            <p>Whisky tradicional com sabor equilibrado.</p>
+                        </div>
+                        <span class="preco-esculpido">7.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="White Horse">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>WHITE HORSE</h3>
+                            <p>Whisky clássico e intenso.</p>
+                        </div>
+                        <span class="preco-esculpido">7.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Smirnoff">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SMIRNOFF</h3>
+                            <p>Dose de vodka gelada.</p>
+                        </div>
+                        <span class="preco-esculpido">7.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Gin Gordon's">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>GIN GORDON'S</h3>
+                            <p>Dose de gin clássico.</p>
+                        </div>
+                        <span class="preco-esculpido">8.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Gin Tanqueray">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>GIN TANQUERAY</h3>
+                            <p>Gin premium com sabor marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">10.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">CERVEJAS LATA / LATÃO</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Amstel">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>AMSTEL - LATÃO</h3>
+                            <p>Cerveja leve e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Devassa">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>DEVASSA - LATÃO</h3>
+                            <p>Cerveja gelada e saborosa.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Heineken">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>HEINEKEN - LATA</h3>
+                            <p>Puro malte bem gelada.</p>
+                        </div>
+                        <span class="preco-esculpido">8.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Heineken Sem Álcool">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>HEINEKEN S/ ÁLCOOL - LATA</h3>
+                            <p>Mesmo sabor sem álcool.</p>
+                        </div>
+                        <span class="preco-esculpido">8.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">ICE</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Smirnoff Ice">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SMIRNOFF ICE</h3>
+                            <p>Bebida ice leve e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">10.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Skol Beats">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SKOL BEATS</h3>
+                            <p>Drink pronto gelado e saboroso.</p>
+                        </div>
+                        <span class="preco-esculpido">9.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Skol Beats GT">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SKOL BEATS GT</h3>
+                            <p>Versão gin tonic pronta para beber.</p>
+                        </div>
+                        <span class="preco-esculpido">10.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">SUCOS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Morango">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>MORANGO</h3>
+                            <p>Suco natural de morango bem gelado.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Limonada">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>LIMONADA</h3>
+                            <p>Suco refrescante feito com limão.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Graviola">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>GRAVIOLA</h3>
+                            <p>Suco natural cremoso e saboroso.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="" alt="Cajá">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CAJÁ</h3>
+                            <p>Suco regional refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -106,4 +1420,5 @@
     </main>
 
 </body>
+
 </html>
