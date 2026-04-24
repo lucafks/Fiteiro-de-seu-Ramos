@@ -11,10 +11,33 @@
 
 <body class="fundo-oled">
 
-    <nav class="nav-minimal">
-        <a href="index.html">← VOLTAR</a>
-        <span class="location">ENGENHO DO MEIO / RECIFE</span>
+    <nav class="bottom-nav">
+        <div class="nav-carousel" id="nav-carousel">
+            <a href="#cervejas">Cervejas</a>
+            <a href="#petiscos">Petiscos</a>
+            <a href="#drinks">Drinks</a>
+            <a href="#doces">Doces</a>
+            <a href="#adicionais">Extras</a>
+            <a href="#promocoes">Promoções</a>
+        </div>
+        <button class="nav-handle" id="handle-drawer">
+            <span>▲</span>
+            <small>MENU</small>
+        </button>
     </nav>
+
+    <div class="drawer-overlay" id="drawer">
+        <div class="drawer-content">
+            <h3>MAIS OPÇÕES</h3>
+            <button class="close-drawer" id="close-drawer">X</button>
+            <ul>
+                <li><a href="#">Sobre o Fiteiro</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Localização</a></li>
+            </ul>
+        </div>
+    </div>
 
     <main class="moldura-tabua">
         <div class="furo-tabua"></div>
@@ -860,7 +883,8 @@
                 </div>
 
                 <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/fysrefrigerante.jpg" alt="Refrigerante Fys"></div>
+                    <div class="foto-produto"><img src="midia/produtos/fysrefrigerante.jpg" alt="Refrigerante Fys">
+                    </div>
                     <div class="item-info">
                         <div class="nome-desc">
                             <h3>REFRIGERANTE FYS (LATA)</h3>
@@ -871,7 +895,7 @@
                 </div>
 
                 <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/coca1l.jpg2" alt="Coca-Cola 1L"></div>
+                    <div class="foto-produto"><img src="midia/produtos/coca1l.jpg" alt="Coca-Cola 1L"></div>
                     <div class="item-info">
                         <div class="nome-desc">
                             <h3>COCA-COLA 1L</h3>
@@ -1430,5 +1454,6 @@
     </main>
 
 </body>
+<script src="cardapio.js" ></script>
 
 </html>

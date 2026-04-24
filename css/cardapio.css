@@ -61,32 +61,123 @@ body.fundo-oled {
     color: var(--text-color);
 }
 
-.nav-minimal {
+/* --- NAVEGAÇÃO INFERIOR --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    max-width: 800px;
+    height: 70px;
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid var(--glass-border);
     display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
-    margin-bottom: 3rem;
-    color: #444;
-    font-size: 1.2rem;
-    font-weight: bold;
+    align-items: center;
+    padding: 0 15px;
+    z-index: 1000;
 }
 
-.nav-minimal a {
-    color: var(--primary);
+/* Carrossel */
+.nav-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    white-space: nowrap;
+    scrollbar-width: none; /* Esconde scroll no Firefox */
+    flex-grow: 1;
+    margin-right: 15px;
+}
+.nav-carousel::-webkit-scrollbar { display: none; }
+
+.nav-carousel a {
+    color: #fff;
     text-decoration: none;
-    transition: 0.3s;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 0;
 }
 
-.nav-minimal a:hover {
-    filter: brightness(1.2);
-    text-shadow: 0 0 8px var(--primary);
+/* Botão de Puxar */
+.nav-handle {
+    background: var(--primary);
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+/* Aba Expansível */
+.drawer-overlay {
+    position: fixed;
+    bottom: 0; /* Fixa na base */
+    left: 0;
+    width: 100%;
+    height: 60vh; /* Altura da aba */
+    background: #0d0d0d;
+    border-top: 2px solid var(--primary);
+    z-index: 1001;
+    border-radius: 25px 25px 0 0;
+    
+    /* Estado inicial: 100% para baixo (escondida) */
+    transform: translateY(100%); 
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    touch-action: none; /* Bloqueia o scroll do navegador ao puxar */
+    will-change: transform;
+    overscroll-behavior: contain;
+}
+
+.drawer-overlay.open {
+    transform: translateY(0);
+}
+
+.drawer-overlay.dragging {
+    transition: none; /* Remove delay enquanto o dedo move */
+}
+
+/* Trava total no HTML e BODY */
+html.drawer-aberta, 
+body.drawer-aberta {
+    overflow: hidden !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    position: fixed !important; /* A chave para travar o fundo no iOS/Android */
+    touch-action: none !important;
+}
+
+.drawer-content {
+    position: relative; /* Essencial para o botão X se posicionar dentro dele */
+    height: 100%;
+}
+
+.close-drawer {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: var(--primary);
+    border: none;
+    color: #000; /* Cor de contraste */
+    font-weight: 900;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1002; /* Maior que o overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 .moldura-tabua {
     /* Troquei 'cover' por 'repeat' e defini um tamanho fixo para manter a nitidez */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url('../midia/wood.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../midia/wood.jpg');
     background-repeat: repeat; 
     background-size: 950px; /* Ajuste esse valor (ex: 300px, 500px) até a textura ficar no tamanho real dela */
     
