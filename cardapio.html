@@ -13,12 +13,17 @@
 
     <nav class="bottom-nav">
         <div class="nav-carousel" id="nav-carousel">
-            <a href="#cervejas">Cervejas</a>
+            <a href="#caldinhos">Caldinhos</a>
+            <a href="#espetinhos">Espetinhos</a>
             <a href="#petiscos">Petiscos</a>
+            <a href="#bolinhos">Bolinhos</a>
+            <a href="#pasteis">Pasteis</a>
+            <a href="#refrigerantes">Refri/Outros</a>
+            <a href="#cervejas600">Cervejas</a>
+            <a href="#cachacas">Cachaças</a>
             <a href="#drinks">Drinks</a>
-            <a href="#doces">Doces</a>
-            <a href="#adicionais">Extras</a>
-            <a href="#promocoes">Promoções</a>
+            <a href="#vinhos">Vinhos</a>
+            <a href="#ice">Ice</a>
         </div>
         <button class="nav-handle" id="handle-drawer">
             <span>▲</span>
@@ -28,14 +33,23 @@
 
     <div class="drawer-overlay" id="drawer">
         <div class="drawer-content">
-            <h3>MAIS OPÇÕES</h3>
             <button class="close-drawer" id="close-drawer">X</button>
-            <ul>
-                <li><a href="#">Sobre o Fiteiro</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Localização</a></li>
-            </ul>
+            <h3>PROMOÇÕES DO DIA</h3>
+
+            <div class="cards-grid">
+                <a href="#" class="promo-card p1">
+                    <img src="midia/promo1.jpg" alt="Promoção 1">
+                    <div class="promo-info">
+                        <span>Dobradinha de Chopp</span>
+                    </div>
+                </a>
+                <a href="#" class="promo-card">
+                    <img src="midia/promo2.jpg" alt="Promoção 2">
+                    <div class="promo-info">
+                        <span>Combo Petisco + Breja</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -166,51 +180,6 @@
             </div>
         </section>
 
-        <section class="categoria">
-            <h2 class="titulo-categoria">BOLINHOS</h2>
-            <div class="itens-entalhados">
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/bolinhodebacalhau.jpg" alt="Bacalhau">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>BACALHAU</h3>
-                            <p>Bolinho crocante por fora e recheado com bacalhau.</p>
-                        </div>
-                        <span class="preco-esculpido">20.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/bolinhodecharque.jpg" alt="Charque">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>CHARQUE</h3>
-                            <p>Bolinho artesanal recheado com charque temperada.</p>
-                        </div>
-                        <span class="preco-esculpido">20.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/bolinhodecostela.jpg" alt="Costela">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>COSTELA</h3>
-                            <p>Bolinho recheado com costela desfiada e sabor marcante.</p>
-                        </div>
-                        <span class="preco-esculpido">23.50</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
 
         <section class="categoria">
             <h2 class="titulo-categoria">PETISCOS</h2>
@@ -434,6 +403,54 @@
         </section>
 
         <section class="categoria">
+            <h2 class="titulo-categoria">BOLINHOS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/bolinhodebacalhau.jpg" alt="Bacalhau">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>BACALHAU</h3>
+                            <p>Bolinho crocante por fora e recheado com bacalhau.</p>
+                        </div>
+                        <span class="preco-esculpido">20.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/bolinhodecharque.jpg" alt="Charque">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CHARQUE</h3>
+                            <p>Bolinho artesanal recheado com charque temperada.</p>
+                        </div>
+                        <span class="preco-esculpido">20.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/bolinhodecostela.jpg" alt="Costela">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>COSTELA</h3>
+                            <p>Bolinho recheado com costela desfiada e sabor marcante.</p>
+                        </div>
+                        <span class="preco-esculpido">23.50</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        
+
+        <section class="categoria">
             <h2 class="titulo-categoria">PASTÉIS</h2>
             <div class="itens-entalhados">
 
@@ -486,6 +503,261 @@
                             <p>Porção com 8 unidades recheadas com camarão.</p>
                         </div>
                         <span class="preco-esculpido">23.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">REFRIGERANTES / OUTROS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/guaranalata.jpg" alt="Guaraná Lata"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>GUARANÁ (LATA)</h3>
+                            <p>Refrigerante gelado.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/cocalata.jpg" alt="Coca-Cola Lata"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>COCA-COLA (LATA)</h3>
+                            <p>Refrigerante clássico bem gelado.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/cocalatazero.jpg" alt="Coca-Cola Zero"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>COCA-COLA ZERO (LATA)</h3>
+                            <p>Zero açúcar e bem gelada.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/fantalata.jpg" alt="Fanta"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>FANTA (LATA)</h3>
+                            <p>Refrigerante refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/fysrefrigerante.jpg" alt="Refrigerante Fys">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>REFRIGERANTE FYS (LATA)</h3>
+                            <p>Leve e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/coca1l.jpg" alt="Coca-Cola 1L"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>COCA-COLA 1L</h3>
+                            <p>Ideal para compartilhar.</p>
+                        </div>
+                        <span class="preco-esculpido">8.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/cocaks.jpg" alt="Coca-Cola KS"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>COCA-COLA KS</h3>
+                            <p>Clássica garrafinha retornável.</p>
+                        </div>
+                        <span class="preco-esculpido">4.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/guarana1l.jpg" alt="Guaraná 1L"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>GUARANÁ 1L</h3>
+                            <p>Refrigerante bem gelado.</p>
+                        </div>
+                        <span class="preco-esculpido">8.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/h20limoneto.jpg" alt="H2O Limoneto"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>H2O LIMONETO</h3>
+                            <p>Bebida leve e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/h20limao.jpg" alt="H2O Limão"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>H2O LIMÃO</h3>
+                            <p>Refrescante e leve.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/aguadecoco.jpg" alt="Água de Coco"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>ÁGUA DE COCO</h3>
+                            <p>Natural e gelada.</p>
+                        </div>
+                        <span class="preco-esculpido">5.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/fyslata.jpg" alt="Fys Tônica"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>FYS TÔNICA</h3>
+                            <p>Ideal para drinks.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/skinka.jpg" alt="Skinka"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>SKINKA</h3>
+                            <p>Refrigerante refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/redbull.jpg" alt="Red Bull"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>RED BULL</h3>
+                            <p>Energético tradicional.</p>
+                        </div>
+                        <span class="preco-esculpido">13.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/monster.jpg" alt="Monster"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>MONSTER</h3>
+                            <p>Energético gelado.</p>
+                        </div>
+                        <span class="preco-esculpido">14.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/aguasemgas.jpg" alt="Água sem Gás"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>ÁGUA S/ GÁS</h3>
+                            <p>Água mineral gelada.</p>
+                        </div>
+                        <span class="preco-esculpido">3.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto"><img src="midia/produtos/aguacomgas.jpg" alt="Água com Gás"></div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>ÁGUA C/ GÁS</h3>
+                            <p>Água mineral com gás.</p>
+                        </div>
+                        <span class="preco-esculpido">4.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="categoria">
+            <h2 class="titulo-categoria">SUCOS</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/sucodemorango.jpg" alt="Morango">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>MORANGO</h3>
+                            <p>Suco natural de morango bem gelado.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/sucodelimonada.jpg" alt="Limonada">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>LIMONADA</h3>
+                            <p>Suco refrescante feito com limão.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/sucodegraviola.jpg" alt="Graviola">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>GRAVIOLA</h3>
+                            <p>Suco natural cremoso e saboroso.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/sucodecaja.jpg" alt="Cajá">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>CAJÁ</h3>
+                            <p>Suco regional refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">6.00</span>
                     </div>
                 </div>
 
@@ -719,6 +991,65 @@
         </section>
 
         <section class="categoria">
+            <h2 class="titulo-categoria">CERVEJAS LATA / LATÃO</h2>
+            <div class="itens-entalhados">
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/amstellatao.jpg" alt="Amstel">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>AMSTEL - LATÃO</h3>
+                            <p>Cerveja leve e refrescante.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/devassalatao.jpg" alt="Devassa">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>DEVASSA - LATÃO</h3>
+                            <p>Cerveja gelada e saborosa.</p>
+                        </div>
+                        <span class="preco-esculpido">6.50</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/heinekenlata.jpg" alt="Heineken">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>HEINEKEN - LATA</h3>
+                            <p>Puro malte bem gelada.</p>
+                        </div>
+                        <span class="preco-esculpido">8.00</span>
+                    </div>
+                </div>
+
+                <div class="item-esculpido">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/heinekensemalcoollata.jpg" alt="Heineken Sem Álcool">
+                    </div>
+                    <div class="item-info">
+                        <div class="nome-desc">
+                            <h3>HEINEKEN S/ ÁLCOOL - LATA</h3>
+                            <p>Mesmo sabor sem álcool.</p>
+                        </div>
+                        <span class="preco-esculpido">8.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categoria">
             <h2 class="titulo-categoria">CACHAÇAS</h2>
             <div class="itens-entalhados">
 
@@ -835,199 +1166,106 @@
         </section>
 
         <section class="categoria">
-            <h2 class="titulo-categoria">REFRIGERANTES / OUTROS</h2>
+            <h2 class="titulo-categoria">DESTILADOS (DOSE)</h2>
             <div class="itens-entalhados">
 
                 <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/guaranalata.jpg" alt="Guaraná Lata"></div>
+                    <div class="foto-produto">
+                        <img src="midia/produtos/johnniered.jpg" alt="Johnnie Red">
+                    </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>GUARANÁ (LATA)</h3>
-                            <p>Refrigerante gelado.</p>
+                            <h3>JOHNNIE RED</h3>
+                            <p>Dose de whisky clássico e marcante.</p>
                         </div>
-                        <span class="preco-esculpido">6.50</span>
+                        <span class="preco-esculpido">8.00</span>
                     </div>
                 </div>
 
                 <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/cocalata.jpg" alt="Coca-Cola Lata"></div>
+                    <div class="foto-produto">
+                        <img src="midia/produtos/oldparr.jpg" alt="Old Parr">
+                    </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>COCA-COLA (LATA)</h3>
-                            <p>Refrigerante clássico bem gelado.</p>
+                            <h3>OLD PARR</h3>
+                            <p>Whisky premium suave e encorpado.</p>
                         </div>
-                        <span class="preco-esculpido">6.50</span>
+                        <span class="preco-esculpido">12.00</span>
                     </div>
                 </div>
 
                 <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/cocalatazero.jpg" alt="Coca-Cola Zero"></div>
+                    <div class="foto-produto">
+                        <img src="midia/produtos/blackewhite.jpg" alt="Black & White">
+                    </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>COCA-COLA ZERO (LATA)</h3>
-                            <p>Zero açúcar e bem gelada.</p>
+                            <h3>BLACK & WHITE</h3>
+                            <p>Whisky tradicional com sabor equilibrado.</p>
                         </div>
-                        <span class="preco-esculpido">6.50</span>
+                        <span class="preco-esculpido">7.00</span>
                     </div>
                 </div>
 
                 <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/fantalata.jpg" alt="Fanta"></div>
+                    <div class="foto-produto">
+                        <img src="midia/produtos/whitehorse.jpg" alt="White Horse">
+                    </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>FANTA (LATA)</h3>
-                            <p>Refrigerante refrescante.</p>
+                            <h3>WHITE HORSE</h3>
+                            <p>Whisky clássico e intenso.</p>
                         </div>
-                        <span class="preco-esculpido">6.50</span>
+                        <span class="preco-esculpido">7.00</span>
                     </div>
                 </div>
 
                 <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/fysrefrigerante.jpg" alt="Refrigerante Fys">
+                    <div class="foto-produto">
+                        <img src="midia/produtos/sminorff.jpg" alt="Smirnoff">
                     </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>REFRIGERANTE FYS (LATA)</h3>
-                            <p>Leve e refrescante.</p>
+                            <h3>SMIRNOFF</h3>
+                            <p>Dose de vodka gelada.</p>
                         </div>
-                        <span class="preco-esculpido">6.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/coca1l.jpg" alt="Coca-Cola 1L"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>COCA-COLA 1L</h3>
-                            <p>Ideal para compartilhar.</p>
-                        </div>
-                        <span class="preco-esculpido">8.50</span>
+                        <span class="preco-esculpido">7.00</span>
                     </div>
                 </div>
 
                 <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/cocaks.jpg" alt="Coca-Cola KS"></div>
+                    <div class="foto-produto">
+                        <img src="midia/produtos/gingordons.jpg" alt="Gin Gordon's">
+                    </div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>COCA-COLA KS</h3>
-                            <p>Clássica garrafinha retornável.</p>
+                            <h3>GIN GORDON'S</h3>
+                            <p>Dose de gin clássico.</p>
                         </div>
-                        <span class="preco-esculpido">4.50</span>
+                        <span class="preco-esculpido">8.00</span>
                     </div>
                 </div>
 
                 <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/guarana1l.jpg" alt="Guaraná 1L"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>GUARANÁ 1L</h3>
-                            <p>Refrigerante bem gelado.</p>
-                        </div>
-                        <span class="preco-esculpido">8.50</span>
+                    <div class="foto-produto">
+                        <img src="midia/produtos/gintaqueray.jpg" alt="Gin Tanqueray">
                     </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/h20limoneto.jpg" alt="H2O Limoneto"></div>
                     <div class="item-info">
                         <div class="nome-desc">
-                            <h3>H2O LIMONETO</h3>
-                            <p>Bebida leve e refrescante.</p>
+                            <h3>GIN TANQUERAY</h3>
+                            <p>Gin premium com sabor marcante.</p>
                         </div>
-                        <span class="preco-esculpido">6.50</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/h20limao.jpg" alt="H2O Limão"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>H2O LIMÃO</h3>
-                            <p>Refrescante e leve.</p>
-                        </div>
-                        <span class="preco-esculpido">6.50</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/aguadecoco.jpg" alt="Água de Coco"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>ÁGUA DE COCO</h3>
-                            <p>Natural e gelada.</p>
-                        </div>
-                        <span class="preco-esculpido">5.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/fyslata.jpg" alt="Fys Tônica"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>FYS TÔNICA</h3>
-                            <p>Ideal para drinks.</p>
-                        </div>
-                        <span class="preco-esculpido">6.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/skinka.jpg" alt="Skinka"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>SKINKA</h3>
-                            <p>Refrigerante refrescante.</p>
-                        </div>
-                        <span class="preco-esculpido">6.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/redbull.jpg" alt="Red Bull"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>RED BULL</h3>
-                            <p>Energético tradicional.</p>
-                        </div>
-                        <span class="preco-esculpido">13.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/monster.jpg" alt="Monster"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>MONSTER</h3>
-                            <p>Energético gelado.</p>
-                        </div>
-                        <span class="preco-esculpido">14.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/aguasemgas.jpg" alt="Água sem Gás"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>ÁGUA S/ GÁS</h3>
-                            <p>Água mineral gelada.</p>
-                        </div>
-                        <span class="preco-esculpido">3.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto"><img src="midia/produtos/aguacomgas.jpg" alt="Água com Gás"></div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>ÁGUA C/ GÁS</h3>
-                            <p>Água mineral com gás.</p>
-                        </div>
-                        <span class="preco-esculpido">4.00</span>
+                        <span class="preco-esculpido">10.00</span>
                     </div>
                 </div>
 
             </div>
         </section>
+
+
+
+        
 
         <section class="categoria">
             <h2 class="titulo-categoria">DRINKS</h2>
@@ -1186,162 +1424,9 @@
             </div>
         </section>
 
-        <section class="categoria">
-            <h2 class="titulo-categoria">DESTILADOS (DOSE)</h2>
-            <div class="itens-entalhados">
 
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/johnniered.jpg" alt="Johnnie Red">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>JOHNNIE RED</h3>
-                            <p>Dose de whisky clássico e marcante.</p>
-                        </div>
-                        <span class="preco-esculpido">8.00</span>
-                    </div>
-                </div>
 
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/oldparr.jpg" alt="Old Parr">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>OLD PARR</h3>
-                            <p>Whisky premium suave e encorpado.</p>
-                        </div>
-                        <span class="preco-esculpido">12.00</span>
-                    </div>
-                </div>
 
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/blackewhite.jpg" alt="Black & White">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>BLACK & WHITE</h3>
-                            <p>Whisky tradicional com sabor equilibrado.</p>
-                        </div>
-                        <span class="preco-esculpido">7.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/whitehorse.jpg" alt="White Horse">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>WHITE HORSE</h3>
-                            <p>Whisky clássico e intenso.</p>
-                        </div>
-                        <span class="preco-esculpido">7.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/sminorff.jpg" alt="Smirnoff">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>SMIRNOFF</h3>
-                            <p>Dose de vodka gelada.</p>
-                        </div>
-                        <span class="preco-esculpido">7.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/gingordons.jpg" alt="Gin Gordon's">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>GIN GORDON'S</h3>
-                            <p>Dose de gin clássico.</p>
-                        </div>
-                        <span class="preco-esculpido">8.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/gintaqueray.jpg" alt="Gin Tanqueray">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>GIN TANQUERAY</h3>
-                            <p>Gin premium com sabor marcante.</p>
-                        </div>
-                        <span class="preco-esculpido">10.00</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="categoria">
-            <h2 class="titulo-categoria">CERVEJAS LATA / LATÃO</h2>
-            <div class="itens-entalhados">
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/amstellatao.jpg" alt="Amstel">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>AMSTEL - LATÃO</h3>
-                            <p>Cerveja leve e refrescante.</p>
-                        </div>
-                        <span class="preco-esculpido">6.50</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/devassalatao.jpg" alt="Devassa">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>DEVASSA - LATÃO</h3>
-                            <p>Cerveja gelada e saborosa.</p>
-                        </div>
-                        <span class="preco-esculpido">6.50</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/heinekenlata.jpg" alt="Heineken">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>HEINEKEN - LATA</h3>
-                            <p>Puro malte bem gelada.</p>
-                        </div>
-                        <span class="preco-esculpido">8.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/heinekensemalcoollata.jpg" alt="Heineken Sem Álcool">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>HEINEKEN S/ ÁLCOOL - LATA</h3>
-                            <p>Mesmo sabor sem álcool.</p>
-                        </div>
-                        <span class="preco-esculpido">8.00</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
 
         <section class="categoria">
             <h2 class="titulo-categoria">ICE</h2>
@@ -1389,64 +1474,7 @@
             </div>
         </section>
 
-        <section class="categoria">
-            <h2 class="titulo-categoria">SUCOS</h2>
-            <div class="itens-entalhados">
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/sucodemorango.jpg" alt="Morango">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>MORANGO</h3>
-                            <p>Suco natural de morango bem gelado.</p>
-                        </div>
-                        <span class="preco-esculpido">6.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/sucodelimonada.jpg" alt="Limonada">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>LIMONADA</h3>
-                            <p>Suco refrescante feito com limão.</p>
-                        </div>
-                        <span class="preco-esculpido">6.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/sucodegraviola.jpg" alt="Graviola">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>GRAVIOLA</h3>
-                            <p>Suco natural cremoso e saboroso.</p>
-                        </div>
-                        <span class="preco-esculpido">6.00</span>
-                    </div>
-                </div>
-
-                <div class="item-esculpido">
-                    <div class="foto-produto">
-                        <img src="midia/produtos/sucodecaja.jpg" alt="Cajá">
-                    </div>
-                    <div class="item-info">
-                        <div class="nome-desc">
-                            <h3>CAJÁ</h3>
-                            <p>Suco regional refrescante.</p>
-                        </div>
-                        <span class="preco-esculpido">6.00</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+        
 
         <footer class="footer-tabua">
             <p>#FITEIRODESEURAMOS</p>
@@ -1454,6 +1482,6 @@
     </main>
 
 </body>
-<script src="cardapio.js" ></script>
+<script src="cardapio.js"></script>
 
 </html>

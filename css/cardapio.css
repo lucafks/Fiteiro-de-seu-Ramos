@@ -86,15 +86,54 @@ body.fundo-oled {
     scrollbar-width: none; /* Esconde scroll no Firefox */
     flex-grow: 1;
     margin-right: 15px;
+    scroll-snap-type: x mandatory; /* Deixa a rolagem mais "presinha" e elegante */
+    -webkit-overflow-scrolling: touch; /* Garante fluidez no iOS */
+    touch-action: pan-x; /* DIZ AO NAVEGADOR: Permitir apenas movimento horizontal aqui */
 }
 .nav-carousel::-webkit-scrollbar { display: none; }
 
 .nav-carousel a {
     color: #fff;
+    height: 70px;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 600;
     padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Garante que nada escape do limite do botão */
+
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+.nav-carousel a:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Ajuste da Barra para evitar o "salto" no meio */
+.nav-carousel a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; /* Fixa bem na base */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+    
+    /* Em vez de width 0, usamos escala 0 */
+    transform: scaleX(0); 
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-carousel a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* Botão de Puxar */
@@ -152,6 +191,11 @@ body.drawer-aberta {
 .drawer-content {
     position: relative; /* Essencial para o botão X se posicionar dentro dele */
     height: 100%;
+    padding: 30px 20px 15px 20px;
+
+    height: 100%;
+    overflow-y: auto; /* Permite rolar os cards se forem muitos */
+    scrollbar-width: none;  
 }
 
 .close-drawer {
@@ -170,6 +214,64 @@ body.drawer-aberta {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Container da Grade */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha no mobile */
+    gap: 15px;
+    padding-top: 20px;
+}
+
+/* O Card Individual */
+.promo-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    aspect-ratio: 3/4; /* Deixa o card em formato de "post" */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+.p1{aspect-ratio: 4/4;}
+.p2{aspect-ratio: 5/4;}
+
+.promo-card:active {
+    transform: scale(0.95); /* Efeito de clique no toque */
+}
+
+/* A Imagem do Card */
+.promo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher o card sem esticar */
+    filter: brightness(0.8); /* Escurece um pouco para o texto aparecer */
+    transition: 0.3s;
+}
+
+.promo-card:hover img {
+    filter: brightness(1); /* Clareia ao passar o mouse ou tocar */
+}
+
+/* Texto sobre a Foto */
+.promo-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    color: white;
+    text-align: center;
+}
+
+.promo-info span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary); /* Laranja do site */
 }
 
 

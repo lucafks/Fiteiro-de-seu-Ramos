@@ -36,28 +36,41 @@
     });
 
     // --- LÓGICA DE GESTOS (SWIPE) ---
-    const onTouchStart = (e) => {
-        startY = e.touches[0].clientY;
-        drawer.classList.add('dragging');
-    };
-
     const onTouchMove = (e) => {
-        // Bloqueia o arrasto do site por trás da aba
-        if (e.cancelable) e.preventDefault(); 
-        
-        currentY = e.touches[0].clientY;
-        let deltaY = currentY - startY;
+    currentY = e.touches[0].clientY;
+    let currentX = e.touches[0].clientX; // Pegamos a posição horizontal também
+    
+    let deltaY = currentY - startY;
+    let deltaX = currentX - (this.startX || currentX); // Diferença horizontal
 
-        if (!drawer.classList.contains('open')) {
-            if (deltaY < 0) { // Puxando para cima
-                let percent = (Math.abs(deltaY) / drawerHeight) * 100;
-                drawer.style.transform = `translateY(${Math.max(0, 100 - percent)}%)`;
-            }
-        } else if (deltaY > 0) { // Puxando para baixo (fechar)
-            let percent = (deltaY / drawerHeight) * 100;
-            drawer.style.transform = `translateY(${Math.min(100, percent)}%)`;
+    // REGRA DE OURO: Se o movimento for mais horizontal do que vertical, 
+    // NÃO executa o preventDefault e sai da função para o carrossel rodar.
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        return; 
+    }
+
+    // Se chegou aqui, o movimento é vertical, então travamos o site
+    if (e.cancelable) e.preventDefault(); 
+    
+    drawer.classList.add('dragging');
+
+    if (!drawer.classList.contains('open')) {
+        if (deltaY < 0) {
+            let percent = (Math.abs(deltaY) / drawerHeight) * 100;
+            drawer.style.transform = `translateY(${Math.max(0, 100 - percent)}%)`;
         }
-    };
+    } else if (deltaY > 0) {
+        let percent = (deltaY / drawerHeight) * 100;
+        drawer.style.transform = `translateY(${Math.min(100, percent)}%)`;
+    }
+};
+
+// Atualize também o onTouchStart para gravar o X inicial
+const onTouchStart = (e) => {
+    startY = e.touches[0].clientY;
+    this.startX = e.touches[0].clientX; // Gravamos o X inicial
+    drawer.classList.add('dragging');
+};
 
     const onTouchEnd = (e) => {
         drawer.classList.remove('dragging');
