@@ -636,7 +636,7 @@ footer {
 .mini-info strong {
     display: block;
     font-size: 1.6rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .mini-info span {

@@ -3,14 +3,62 @@
     --dark-bg: #0d0d0d;
     --text-color: #ffffff;
     --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(20, 20, 20, 0.6);
+    /* Cor do vidro no escuro */
     --cor-descricao: #bdc3c7;
+    --wood: linear-gradient(var(--glass-bg), var(--dark-bg)), url('../midia/wood.jpg');
     font-size: 52.5%;
 }
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Quando o body tiver a classe .light-mode */
+body.light-mode {
+    --primary: #d35400;
+    /* Um laranja um pouco mais denso para contraste no branco */
+    --dark-bg: #f5f5f7;
+    /* Fundo estilo Apple, levemente cinza */
+    --text-color: #1d1d1f;
+    /* Preto profundo para leitura */
+    --glass-border: rgba(94, 94, 94, 0.452);
+    /* Bordas escuras bem finas */
+    --cor-descricao: #ffffffc0;
+    /* Cinza médio para descrições */
+    --wood: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('../midia/wood.jpg');
+
+    /* Adicional para os cards no modo claro */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+}
+
+.theme-btn {
+    position: relative;
+    bottom: 50px;
+    left: 900px;
+    z-index: 1001;
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    border-color: var(--primary);
 }
 
 /* --- ANIMAÇÕES --- */
@@ -35,6 +83,56 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+.btn-voltar {
+
+    position: absolute;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+
+    /* Estilo Glassmorphism */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.btn-voltar:active {
+    transform: scale(0.95);
+}
+
+/* Ajuste para celular para não sumir no canto */
+@media (max-width: 600px) {
+    .btn-voltar {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Centraliza no rodapé do celular */
+        width: max-content;
+    }
+
+    .btn-voltar:hover {
+        transform: translateX(-50%) translateY(-3px);
     }
 }
 
@@ -187,7 +285,7 @@ body.fundo-oled {
     width: 100%;
     height: 60vh;
     /* Altura da aba */
-    background: #0d0d0d;
+    background: var(--dark-bg);
     border-top: 2px solid var(--primary);
     z-index: 1001;
     border-radius: 25px 25px 0 0;
@@ -359,8 +457,8 @@ body.drawer-aberta {
 
 .moldura-tabua {
     /* Troquei 'cover' por 'repeat' e defini um tamanho fixo para manter a nitidez */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url('../midia/wood.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../midia/wood.jpg');
+    background-image: var(--wood);
     background-repeat: repeat;
     background-size: 950px;
     /* Ajuste esse valor (ex: 300px, 500px) até a textura ficar no tamanho real dela */
@@ -421,6 +519,7 @@ body.drawer-aberta {
     background: rgba(0, 0, 0, 0.55);
     border-color: rgba(230, 126, 34, 0.2);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .foto-produto {
@@ -512,10 +611,14 @@ body.drawer-aberta {
     color: #444;
 }
 
+
+
 /* --- RESPONSIVIDADE TURBINADA --- */
 @media (max-width: 600px) {
 
-    .header-entalhado img {height: 30vw;}
+    .header-entalhado img {
+        height: 30vw;
+    }
 
     .moldura-tabua {
         padding: 4rem 1.5rem;
@@ -605,7 +708,6 @@ body.drawer-aberta {
 
     .item-esculpido p {
         display: -webkit-box;
-        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -623,5 +725,18 @@ body.drawer-aberta {
         font-weight: 725;
         font-size: 6vw;
         letter-spacing: 3vw;
+    }
+
+    .theme-btn {
+        width: 30px;
+        height: 30px;
+        bottom: 25px;
+        left: 252px;
+        border: transparent;
+        background-color: transparent;
+    }
+    .btn-voltar {
+        position: relative;
+        left: 40px;
     }
 }
