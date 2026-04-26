@@ -44,6 +44,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 .header-entalhado img {
     height: 20vw;
     object-fit: cover;
@@ -83,14 +84,39 @@ body.fundo-oled {
     overflow-x: auto;
     gap: 20px;
     white-space: nowrap;
-    scrollbar-width: none; /* Esconde scroll no Firefox */
+    scrollbar-width: none;
+    /* Esconde scroll no Firefox */
     flex-grow: 1;
     margin-right: 15px;
-    scroll-snap-type: x mandatory; /* Deixa a rolagem mais "presinha" e elegante */
-    -webkit-overflow-scrolling: touch; /* Garante fluidez no iOS */
-    touch-action: pan-x; /* DIZ AO NAVEGADOR: Permitir apenas movimento horizontal aqui */
+    scroll-snap-type: x mandatory;
+    /* Deixa a rolagem mais "presinha" e elegante */
+    -webkit-overflow-scrolling: touch;
+    /* Garante fluidez no iOS */
+    touch-action: pan-x;
+    /* DIZ AO NAVEGADOR: Permitir apenas movimento horizontal aqui */
 }
-.nav-carousel::-webkit-scrollbar { display: none; }
+
+.nav-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-carousel p {
+    color: #fff;
+    height: 70px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    /* Garante que nada escape do limite do botão */
+
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
 
 .nav-carousel a {
     color: #fff;
@@ -104,7 +130,8 @@ body.fundo-oled {
     justify-content: center;
     transition: color 0.3s ease, transform 0.3s ease;
     position: relative;
-    overflow: hidden; /* Garante que nada escape do limite do botão */
+    overflow: hidden;
+    /* Garante que nada escape do limite do botão */
 
     scroll-snap-align: start;
     flex-shrink: 0;
@@ -119,14 +146,15 @@ body.fundo-oled {
 .nav-carousel a::after {
     content: '';
     position: absolute;
-    bottom: 5px; /* Fixa bem na base */
+    bottom: 5px;
+    /* Fixa bem na base */
     left: 0;
     width: 100%;
     height: 2px;
     background-color: var(--primary);
-    
+
     /* Em vez de width 0, usamos escala 0 */
-    transform: scaleX(0); 
+    transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -153,19 +181,22 @@ body.fundo-oled {
 /* Aba Expansível */
 .drawer-overlay {
     position: fixed;
-    bottom: 0; /* Fixa na base */
+    bottom: 0;
+    /* Fixa na base */
     left: 0;
     width: 100%;
-    height: 60vh; /* Altura da aba */
+    height: 60vh;
+    /* Altura da aba */
     background: #0d0d0d;
     border-top: 2px solid var(--primary);
     z-index: 1001;
     border-radius: 25px 25px 0 0;
-    
+
     /* Estado inicial: 100% para baixo (escondida) */
-    transform: translateY(100%); 
+    transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    touch-action: none; /* Bloqueia o scroll do navegador ao puxar */
+    touch-action: none;
+    /* Bloqueia o scroll do navegador ao puxar */
     will-change: transform;
     overscroll-behavior: contain;
 }
@@ -175,42 +206,45 @@ body.fundo-oled {
 }
 
 .drawer-overlay.dragging {
-    transition: none; /* Remove delay enquanto o dedo move */
+    transition: none !important;
+    /* Remove delay enquanto o dedo move */
 }
 
 /* Trava total no HTML e BODY */
-html.drawer-aberta, 
+html.drawer-aberta,
 body.drawer-aberta {
     overflow: hidden !important;
     height: 100vh !important;
     width: 100vw !important;
-    position: fixed !important; /* A chave para travar o fundo no iOS/Android */
     touch-action: none !important;
 }
 
 .drawer-content {
-    position: relative; /* Essencial para o botão X se posicionar dentro dele */
+    position: relative;
+    /* Essencial para o botão X se posicionar dentro dele */
     height: 100%;
-    padding: 30px 20px 15px 20px;
+    padding: 30px 20px;
 
-    height: 100%;
-    overflow-y: auto; /* Permite rolar os cards se forem muitos */
-    scrollbar-width: none;  
+    overflow-y: auto;
+    /* Permite rolar os cards se forem muitos */
+    scrollbar-width: none;
 }
 
 .close-drawer {
     position: absolute;
-    top: 15px;
+    top: 10px;
     right: 20px;
     background: var(--primary);
     border: none;
-    color: #000; /* Cor de contraste */
+    color: #000;
+    /* Cor de contraste */
     font-weight: 900;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 1002; /* Maior que o overlay */
+    z-index: 1002;
+    /* Maior que o overlay */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,40 +253,86 @@ body.drawer-aberta {
 /* Container da Grade */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha no mobile */
+    /* Aumentamos para 5 colunas para o 'span 2' não ficar gigante */
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: dense;
     gap: 15px;
-    padding-top: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* O Card Individual */
 .promo-card {
     position: relative;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
     text-decoration: none;
-    aspect-ratio: 3/4; /* Deixa o card em formato de "post" */
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
+
+    /* REMOVIDO: height: 50% (isso quebra o grid) */
+
+    /* Ocupa 2 de 5 colunas */
+    grid-column: span 1;
+    grid-row: span 3;
+    /* Aumentamos o span de linha para manter a proporção 9:16 */
+    aspect-ratio: 9 / 16;
 }
-.p1{aspect-ratio: 4/4;}
-.p2{aspect-ratio: 5/4;}
+
+/* Quadrado (1:1) - Ocupa 1 coluna e 1 linha */
+.p1 {
+    grid-column: span 1;
+    grid-row: span 1;
+    aspect-ratio: 1 / 1;
+}
+
+/* Horizontal (16:9) - Ocupa 2 colunas e 1 linha */
+.p2 {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16 / 9;
+}
+
+/* Efeito de "escada" só para o PC */
+.promo-card:nth-child(even) {
+    margin-top: 20px;
+}
+
+.promo-card:nth-child(3n) {
+    margin-top: -10px;
+}
+
+/* Efeito de "escada" para não ficar tudo alinhado */
+.promo-card:nth-child(even) {
+    margin-top: 15px;
+}
+
+.promo-card:nth-child(3n) {
+    margin-top: -10px;
+}
 
 .promo-card:active {
-    transform: scale(0.95); /* Efeito de clique no toque */
+    transform: scale(0.95);
+    /* Efeito de clique no toque */
 }
 
 /* A Imagem do Card */
 .promo-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz a foto preencher o card sem esticar */
-    filter: brightness(0.8); /* Escurece um pouco para o texto aparecer */
+    object-fit: fill;
+    display: block;
+    /* Faz a foto preencher o card sem esticar */
+    filter: brightness(0.8);
+    /* Escurece um pouco para o texto aparecer */
     transition: 0.3s;
 }
 
 .promo-card:hover img {
-    filter: brightness(1); /* Clareia ao passar o mouse ou tocar */
+    filter: brightness(1);
+    /* Clareia ao passar o mouse ou tocar */
 }
 
 /* Texto sobre a Foto */
@@ -262,7 +342,7 @@ body.drawer-aberta {
     left: 0;
     width: 100%;
     padding: 10px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
     color: white;
     text-align: center;
 }
@@ -271,7 +351,8 @@ body.drawer-aberta {
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--primary); /* Laranja do site */
+    color: var(--primary);
+    /* Laranja do site */
 }
 
 
@@ -280,9 +361,10 @@ body.drawer-aberta {
     /* Troquei 'cover' por 'repeat' e defini um tamanho fixo para manter a nitidez */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url('../midia/wood.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../midia/wood.jpg');
-    background-repeat: repeat; 
-    background-size: 950px; /* Ajuste esse valor (ex: 300px, 500px) até a textura ficar no tamanho real dela */
-    
+    background-repeat: repeat;
+    background-size: 950px;
+    /* Ajuste esse valor (ex: 300px, 500px) até a textura ficar no tamanho real dela */
+
     width: 100%;
     max-width: 800px;
     padding: 6rem 4rem;
@@ -432,6 +514,9 @@ body.drawer-aberta {
 
 /* --- RESPONSIVIDADE TURBINADA --- */
 @media (max-width: 600px) {
+
+    .header-entalhado img {height: 30vw;}
+
     .moldura-tabua {
         padding: 4rem 1.5rem;
     }
@@ -452,6 +537,56 @@ body.drawer-aberta {
     .foto-produto {
         width: 8rem;
         height: 8rem;
+    }
+
+    .cards-grid {
+        display: grid;
+        /* Força duas colunas fixas e iguais */
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: dense;
+        gap: 10px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .promo-card {
+        /* OBRIGATÓRIO: Cancela qualquer span do PC */
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        margin: 0 !important;
+
+        /* O segredo do tamanho: Proporção curta */
+        aspect-ratio: 1 / 1;
+        /* Deixa quase tudo quadrado/compacto */
+        width: 100%;
+        /* Trava física para não crescer */
+    }
+
+    /* O vertical padrão ganha um pouco mais de altura, mas sem exagero */
+    .promo-card:not(.p1):not(.p2) {
+        aspect-ratio: 4 / 5;
+    }
+
+    .p1 {
+        aspect-ratio: 1 / 1;
+    }
+
+    .p2 {
+        /* O único que pode ocupar as duas colunas para dar estilo */
+        grid-column: span 2 !important;
+        aspect-ratio: 16 / 9;
+        max-width: 280px;
+    }
+
+    .promo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        display: block;
+        /* Faz a foto preencher o card sem esticar */
+        filter: brightness(0.8);
+        /* Escurece um pouco para o texto aparecer */
+        transition: 0.3s;
     }
 
     .item-info {
@@ -485,8 +620,8 @@ body.drawer-aberta {
     }
 
     .texto-entalhado {
-    font-weight: 725;
-    font-size: 6vw;
-    letter-spacing: 3vw;
+        font-weight: 725;
+        font-size: 6vw;
+        letter-spacing: 3vw;
     }
 }
