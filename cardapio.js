@@ -671,3 +671,62 @@ function animar3D() {
 // Exportar funções globais
 window.abrirVisualizador3D = abrirVisualizador3D;
 window.fecharVisualizador3D = fecharVisualizador3D;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function gerarCardapio() {
+    const footer = document.querySelector('.footer-tabua');
+    
+    // Verificar se footer existe
+    if (!footer) {
+        console.error('❌ Elemento .footer-tabua não encontrado!');
+        // Tentar novamente em 500ms
+        setTimeout(gerarCardapio, 500);
+        return;
+    }
+    
+    // Remove todas as seções existentes
+    const secoesExistentes = document.querySelectorAll('.categoria');
+    secoesExistentes.forEach(secao => secao.remove());
+    
+    // Adiciona as novas seções ANTES do footer
+    Object.entries(cardapio).forEach(([id, categoria]) => {
+        const secaoHTML = criarSecao(id, categoria);
+        footer.insertAdjacentHTML('beforebegin', secaoHTML);
+    });
+    
+    console.log('✅ Cardápio gerado com sucesso!');
+}
+
+// Verificar se Three.js carregou
+function verificarDependencias() {
+    if (typeof THREE === 'undefined') {
+        console.warn('⚠️ Three.js não carregou - visualizador 3D não funcionará');
+    }
+    if (typeof THREE !== 'undefined' && typeof THREE.GLTFLoader === 'undefined') {
+        console.warn('⚠️ GLTFLoader não carregou - modelos GLB não funcionarão');
+    }
+}
+
+// Inicializa quando o DOM estiver pronto
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        verificarDependencias();
+        gerarCardapio();
+    });
+} else {
+    // DOM já carregou
+    verificarDependencias();
+    gerarCardapio();
+}
