@@ -8,6 +8,7 @@
     --cor-descricao: #bdc3c7;
     --wood: linear-gradient(var(--glass-bg), var(--dark-bg)), url('../midia/wood.jpg');
     font-size: 52.5%;
+    --box-shadowin: rgba(0, 0, 0, 0.9);
 }
 
 
@@ -33,6 +34,7 @@ body.light-mode {
 
     /* Adicional para os cards no modo claro */
     --glass-bg: rgba(255, 255, 255, 0.7);
+    --box-shadowin: rgba(97, 97, 97, 0.664);
 }
 
 .theme-btn {
@@ -469,7 +471,7 @@ body.drawer-aberta {
     position: relative;
     border-radius: 2.5rem;
     border: 2px solid var(--glass-border);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 1), inset 0 0 120px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 1), inset 0 0 120px var(--box-shadowin);
 }
 
 .texto-entalhado {
@@ -588,9 +590,16 @@ body.drawer-aberta {
     text-shadow: 0 0 10px var(--primary);
 }
 
-.preco-esculpido::before {
-    content: "R$ ";
-    font-size: 1.4rem;
+.container-price {
+    display: flex;
+    margin-left: auto;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: end;
+    flex-wrap: wrap;
+
+    
 }
 
 .furo-tabua {

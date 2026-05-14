@@ -188,7 +188,59 @@ nav a:hover {
     /* Garante que a imagem não saia das bordas arredondadas */
     display: flex;
     flex-direction: column;
+
+    
 }
+
+/* Container dos preços duplos */
+.precos-duplos {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.precos-multiplos {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.preco-item {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.preco-label {
+    font-size: 0.75em;
+    font-weight: normal;
+    color: #888;
+    margin-right: 2px;
+}
+
+/* Compatibilidade com item antigo */
+.preco-esculpido {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+/* Ajuste no item-esculpido */
+.item-esculpido .item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nome-desc {
+    flex: 1;
+    min-width: 120px;
+}
+
+
 
 /* Container da Imagem */
 .card-img {
