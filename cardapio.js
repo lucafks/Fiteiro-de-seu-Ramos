@@ -854,10 +854,6 @@ function preCarregarTudo() {
     console.log(`🖼️ Pré-carregando ${imagens.length} imagens...`);
     console.log(`🎨 Pré-carregando ${modelos.length} modelos 3D...`);
     
-    // Opcional: baixar modelos de verdade
-    modelos.forEach(url => {
-        fetch(url).catch(err => console.log(`⚠️ Falha no pré-load: ${url}`));
-    });
 }
 
 // Executa 3 segundos após a página carregar
