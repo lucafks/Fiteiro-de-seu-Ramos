@@ -453,35 +453,6 @@ function criarSecao(id, categoria) {
 }
 
 // Função para gerar todo o cardápio
-function gerarCardapio() {
-    // Aguarda o DOM estar pronto
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(gerarCardapio, 100);
-        });
-        return;
-    }
-    
-    const footer = document.querySelector('.footer-tabua');
-    
-    if (!footer) {
-        console.error('❌ Elemento .footer-tabua não encontrado!');
-        return;
-    }
-    
-    // Remove todas as seções existentes
-    const secoesExistentes = document.querySelectorAll('.categoria');
-    secoesExistentes.forEach(secao => secao.remove());
-    
-    // Adiciona as novas seções ANTES do footer
-    Object.entries(cardapio).forEach(([id, categoria]) => {
-        const secaoHTML = criarSecao(id, categoria);
-        footer.insertAdjacentHTML('beforebegin', secaoHTML);
-    });
-    
-    console.log('✅ Cardápio gerado com sucesso! Itens:',
-        Object.values(cardapio).reduce((acc, cat) => acc + cat.itens.length, 0));
-    }
     
     // Executar após o DOM carregar
     if (document.readyState === 'loading') {
