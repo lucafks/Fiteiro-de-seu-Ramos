@@ -762,57 +762,7 @@ function gerarCardapio() {
     
     
     
-    function gerarCardapio() {
-        // Aguarda o DOM estar pronto
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                setTimeout(gerarCardapio, 100);
-            });
-            return;
-        }
-        
-        const footer = document.querySelector('.footer-tabua');
-        
-        if (!footer) {
-            console.error('❌ Elemento .footer-tabua não encontrado!');
-            return;
-        }
-        
-        // Remove todas as seções existentes
-        const secoesExistentes = document.querySelectorAll('.categoria');
-        secoesExistentes.forEach(secao => secao.remove());
-        
-        // Adiciona as novas seções ANTES do footer
-        Object.entries(cardapio).forEach(([id, categoria]) => {
-            const secaoHTML = criarSecao(id, categoria);
-            footer.insertAdjacentHTML('beforebegin', secaoHTML);
-        });
-        
-        console.log('✅ Cardápio gerado com sucesso! Itens:',
-            Object.values(cardapio).reduce((acc, cat) => acc + cat.itens.length, 0));
-        }
-        
-        // Verificar se Three.js carregou
-        function verificarDependencias() {
-            if (typeof THREE === 'undefined') {
-                console.warn('⚠️ Three.js não carregou - visualizador 3D não funcionará');
-            }
-            if (typeof THREE !== 'undefined' && typeof THREE.GLTFLoader === 'undefined') {
-                console.warn('⚠️ GLTFLoader não carregou - modelos GLB não funcionarão');
-            }
-        }
-        
-        // Inicializa quando o DOM estiver pronto
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                verificarDependencias();
-                gerarCardapio();
-            });
-        } else {
-            // DOM já carregou
-            verificarDependencias();
-            gerarCardapio();
-        }
+  
         
         
         
@@ -853,8 +803,17 @@ function preCarregarTudo() {
     
     console.log(`🖼️ Pré-carregando ${imagens.length} imagens...`);
     console.log(`🎨 Pré-carregando ${modelos.length} modelos 3D...`);
-    
+ if (typeof THREE === 'undefined') {
+        const scriptThree = document.createElement('script');
+        scriptThree.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+        document.head.appendChild(scriptThree);
+        
+        const scriptLoader = document.createElement('script');
+        scriptLoader.src = 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js';
+        document.head.appendChild(scriptLoader);
+        
+        console.log('🎮 Pré-carregando Three.js...');
+    }
 }
-
 // Executa 3 segundos após a página carregar
 setTimeout(preCarregarTudo, 3000);
