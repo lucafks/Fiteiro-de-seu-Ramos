@@ -819,4 +819,46 @@ function gerarCardapio() {
         
         
         
-        
+// pre-processamento:
+
+
+function preCarregarTudo() {
+    // Imagens
+    const imagens = [];
+    const modelos = [];
+    
+    Object.values(cardapio).forEach(categoria => {
+        categoria.itens.forEach(item => {
+            // Imagens
+            if (item.img && !imagens.includes(item.img)) {
+                imagens.push(item.img);
+                const linkImg = document.createElement('link');
+                linkImg.rel = 'preload';
+                linkImg.as = 'image';
+                linkImg.href = item.img;
+                document.head.appendChild(linkImg);
+            }
+            
+            // Modelos 3D
+            if (item.modelo3d && !modelos.includes(item.modelo3d)) {
+                modelos.push(item.modelo3d);
+                const linkModel = document.createElement('link');
+                linkModel.rel = 'preload';
+                linkModel.as = 'fetch';
+                linkModel.href = item.modelo3d;
+                document.head.appendChild(linkModel);
+            }
+        });
+    });
+    
+    console.log(`🖼️ Pré-carregando ${imagens.length} imagens...`);
+    console.log(`🎨 Pré-carregando ${modelos.length} modelos 3D...`);
+    
+    // Opcional: baixar modelos de verdade
+    modelos.forEach(url => {
+        fetch(url).catch(err => console.log(`⚠️ Falha no pré-load: ${url}`));
+    });
+}
+
+// Executa 3 segundos após a página carregar
+setTimeout(preCarregarTudo, 3000);
