@@ -453,6 +453,35 @@ function criarSecao(id, categoria) {
 }
 
 // Função para gerar todo o cardápio
+function gerarCardapio() {
+    // Aguarda o DOM estar pronto
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(gerarCardapio, 100);
+        });
+        return;
+    }
+    
+    const footer = document.querySelector('.footer-tabua');
+    
+    if (!footer) {
+        console.error('❌ Elemento .footer-tabua não encontrado!');
+        return;
+    }
+    
+    // Remove todas as seções existentes
+    const secoesExistentes = document.querySelectorAll('.categoria');
+    secoesExistentes.forEach(secao => secao.remove());
+    
+    // Adiciona as novas seções ANTES do footer
+    Object.entries(cardapio).forEach(([id, categoria]) => {
+        const secaoHTML = criarSecao(id, categoria);
+        footer.insertAdjacentHTML('beforebegin', secaoHTML);
+    });
+    
+    console.log('✅ Cardápio gerado com sucesso! Itens:',
+        Object.values(cardapio).reduce((acc, cat) => acc + cat.itens.length, 0));
+    }
     
     // Executar após o DOM carregar
     if (document.readyState === 'loading') {
@@ -734,13 +763,18 @@ function criarSecao(id, categoria) {
     
     
     function gerarCardapio() {
+        // Aguarda o DOM estar pronto
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(gerarCardapio, 100);
+            });
+            return;
+        }
+        
         const footer = document.querySelector('.footer-tabua');
         
-        // Verificar se footer existe
         if (!footer) {
             console.error('❌ Elemento .footer-tabua não encontrado!');
-            // Tentar novamente em 500ms
-            setTimeout(gerarCardapio, 500);
             return;
         }
         
@@ -754,65 +788,35 @@ function criarSecao(id, categoria) {
             footer.insertAdjacentHTML('beforebegin', secaoHTML);
         });
         
-        console.log('✅ Cardápio gerado com sucesso!');
-    }
-    
-    // Verificar se Three.js carregou
-    function verificarDependencias() {
-        if (typeof THREE === 'undefined') {
-            console.warn('⚠️ Three.js não carregou - visualizador 3D não funcionará');
+        console.log('✅ Cardápio gerado com sucesso! Itens:',
+            Object.values(cardapio).reduce((acc, cat) => acc + cat.itens.length, 0));
         }
-        if (typeof THREE !== 'undefined' && typeof THREE.GLTFLoader === 'undefined') {
-            console.warn('⚠️ GLTFLoader não carregou - modelos GLB não funcionarão');
+        
+        // Verificar se Three.js carregou
+        function verificarDependencias() {
+            if (typeof THREE === 'undefined') {
+                console.warn('⚠️ Three.js não carregou - visualizador 3D não funcionará');
+            }
+            if (typeof THREE !== 'undefined' && typeof THREE.GLTFLoader === 'undefined') {
+                console.warn('⚠️ GLTFLoader não carregou - modelos GLB não funcionarão');
+            }
         }
-    }
-    
-    // Inicializa quando o DOM estiver pronto
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
+        
+        // Inicializa quando o DOM estiver pronto
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                verificarDependencias();
+                gerarCardapio();
+            });
+        } else {
+            // DOM já carregou
             verificarDependencias();
             gerarCardapio();
-        });
-    } else {
-        // DOM já carregou
-        verificarDependencias();
-        gerarCardapio();
-    }
-
-
-
-
-    
-
-
-
-    //cache registro
-
-
-    // Código que conecta seu site com o Service Worker
-if ('serviceWorker' in navigator) {
-    // Só executa se o navegador suporta (todos modernos suportam)
-    
-    window.addEventListener('load', () => {
-        // Registra o arquivo sw.js como Service Worker
-        navigator.serviceWorker.register('/sw.js')
-            .then(reg => {
-                console.log('✅ Service Worker registrado!');
-                
-                // Detecta quando tem atualização disponível
-                reg.onupdatefound = () => {
-                    const installingWorker = reg.installing;
-                    installingWorker.onstatechange = () => {
-                        if (installingWorker.state === 'installed') {
-                            if (navigator.serviceWorker.controller) {
-                                console.log('🔄 Nova versão! Recarregue.');
-                            } else {
-                                console.log('📦 Cache pronto para offline!');
-                            }
-                        }
-                    };
-                };
-            })
-            .catch(err => console.log('❌ Erro:', err));
-    });
-}
+        }
+        
+        
+        
+        
+        
+        
+        
