@@ -1,3 +1,5 @@
+
+
 :root {
     --primary: #e67e22;
     --dark-bg: #0d0d0d;
@@ -6,7 +8,7 @@
     --glass-bg: rgba(20, 20, 20, 0.6);
     /* Cor do vidro no escuro */
     --cor-descricao: #bdc3c7;
-    --wood: linear-gradient(var(--glass-bg), var(--dark-bg)), url('../midia/wood.jpg');
+    --wood: url('../midia/wood.webp');
     font-size: 52.5%;
     --box-shadowin: rgba(0, 0, 0, 0.9);
 }
@@ -30,7 +32,6 @@ body.light-mode {
     /* Bordas escuras bem finas */
     --cor-descricao: #ffffffc0;
     /* Cinza médio para descrições */
-    --wood: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('../midia/wood.jpg');
 
     /* Adicional para os cards no modo claro */
     --glass-bg: rgba(255, 255, 255, 0.7);
@@ -61,19 +62,6 @@ body.light-mode {
 .theme-btn:hover {
     transform: scale(1.1);
     border-color: var(--primary);
-}
-
-/* --- ANIMAÇÕES --- */
-@keyframes glowPreco {
-
-    0%,
-    100% {
-        text-shadow: 0 0 5px rgba(230, 126, 34, 0.2);
-    }
-
-    50% {
-        text-shadow: 0 0 15px rgba(230, 126, 34, 0.6);
-    }
 }
 
 @keyframes entradaItem {
@@ -458,12 +446,12 @@ body.drawer-aberta {
 
 
 .moldura-tabua {
-    /* Troquei 'cover' por 'repeat' e defini um tamanho fixo para manter a nitidez */
+    /* Ajuste esse valor (ex: 300px, 500px) até a textura ficar no tamanho real dela */
+    background-color: rgba(0,0,0,0.5);
     background-image: var(--wood);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../midia/wood.jpg');
     background-repeat: repeat;
     background-size: 950px;
-    /* Ajuste esse valor (ex: 300px, 500px) até a textura ficar no tamanho real dela */
+    background-blend-mode: overlay;
 
     width: 100%;
     max-width: 800px;
@@ -472,6 +460,7 @@ body.drawer-aberta {
     border-radius: 2.5rem;
     border: 2px solid var(--glass-border);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 1), inset 0 0 120px var(--box-shadowin);
+    
 }
 
 .texto-entalhado {
@@ -581,7 +570,6 @@ body.drawer-aberta {
     white-space: nowrap;
     flex-shrink: 0;
     align-self: flex-start;
-    animation: glowPreco 3s infinite ease-in-out;
     transition: transform 0.3s ease;
 }
 

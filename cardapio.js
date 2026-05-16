@@ -807,3 +807,41 @@ function gerarCardapio() {
         verificarDependencias();
         gerarCardapio();
     }
+
+
+
+
+    
+
+
+
+    //cache registro
+
+
+    // Código que conecta seu site com o Service Worker
+if ('serviceWorker' in navigator) {
+    // Só executa se o navegador suporta (todos modernos suportam)
+    
+    window.addEventListener('load', () => {
+        // Registra o arquivo sw.js como Service Worker
+        navigator.serviceWorker.register('/sw.js')
+            .then(reg => {
+                console.log('✅ Service Worker registrado!');
+                
+                // Detecta quando tem atualização disponível
+                reg.onupdatefound = () => {
+                    const installingWorker = reg.installing;
+                    installingWorker.onstatechange = () => {
+                        if (installingWorker.state === 'installed') {
+                            if (navigator.serviceWorker.controller) {
+                                console.log('🔄 Nova versão! Recarregue.');
+                            } else {
+                                console.log('📦 Cache pronto para offline!');
+                            }
+                        }
+                    };
+                };
+            })
+            .catch(err => console.log('❌ Erro:', err));
+    });
+}
